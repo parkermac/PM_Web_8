@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Intro to Geophysical Fluid Dynamics</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Georgia, Times New Roman, Times, serif;
+}
+body {
+	background-image: url();
+	background-repeat: no-repeat;
+	background-color: #CCCCCC;
+}
+.style1 {font-family: Georgia, "Times New Roman", Times, serif}
+.style2 {
+	color: #339900
+}
+.style4 {
+	color: #0000FF
+}
+.style6 {
+	color: #FF0000
+}
+.style10 {color: #666666}
+.style12 {font-family: Georgia, "Times New Roman", Times, serif; color: #000000; }
+.style13 {color: #000000}
+-->
+</style></head>
+
+<body>
+<br />
+<table width="1000" border="0" align="center" cellpadding="10" background="waves1.jpg">
+<tr>
+      <td><h2 align="center" class="style1">Introduction to Geophysical Fluid Dynamics<br />
+          Fall 2009</h2>    </td>
+  </tr>
+  </table>
+<table width="1000" border="0" align="center" cellpadding="10" bgcolor="#FFFFFF">
+<tr>
+      <td><ul>
+        <li><strong align="left">AMATH &amp; ATM S 505A, OCEAN 511A (4 Credits)</strong></li>
+        <li><strong align="left">Meetings</strong>: MWF 11:30-12:20, <a href="http://www.washington.edu/home/maps/northcentral.html?82,56,866,586">LOW</a> 101, plus 4th hour: 10:30-11:20 OR 12:30-1:20 Fridays (Locations TBD and will vary week-to-week)</li>
+        <li><strong align="left">Instructor</strong>: <a href="../../index.html">Parker MacCready</a>, parker@ocean.washington.edu, (68)5-9588, OCN 311, office hours by appointment</li>
+        <li><strong align="left">TA</strong>: Cathy Yang, ykc1208@u.washington.edu, (61)6-9682, office hours: Wednesdays 10:30-11:20 am and Fridays 2:30-3:20 pm at OSB 245</li>
+        <li><strong align="left">Textbook</strong> (required):<strong> Fluid Mechanics</strong> by Kundu and Cohen (preferably 4th ed.).<br />
+          Copies are available at the bookstore in the ATM SCI section</li>
+      </ul>
+        <p><strong>DESCRIPTION</strong>: This class is for first year grad students in Atmospheric Science, Oceanography, Civil, Environmental, and Mechanical Engineering, and related disciplines. It is meant to be a rigorous introduction to  basic aspects of fluid flow, from its molecular origins (what is pressure? what is viscosity?) to simple large scale behavior (why does atmospheric temperature decrease with height?). And of course we cover the fun things - like how vortices interact and why waves move the way they do. We develop and apply the important tools of fluid understanding: conservation of mass, momentum, energy, and vorticity. And we learn how to apply different reference frames (a point in space, a point following the fluid, a surface, a volume) to see problems in different ways. </p>
+        <p><strong>CATALOG DESCRIPTION</strong>: Eulerian  equations for mass, motion; Navier-Stokes equation for viscous fluids,  Cartesian tensors, stress, strain relations; Kelvin's theorem, vortex  dynamics; potential flows, flows with high, low Reynolds numbers;  boundary layers, introduction to singular perturbation techniques;  water waves; linear instability theory. Prerequisite: AMATH 403 or  permission of instructor.</p>
+        <p><strong>GRADING</strong></p>
+        <ul>
+          <li>Homework: 60% (OK to work with others, but write it out yourself)</li>
+          <li>Midterm 15% (take home, open book, open notes)</li>
+          <li>Final 25% (take home, open book, open notes) </li>
+        </ul>
+        <p><strong>SYLLABUS</strong> (<span class="style2">KC=Kundu &amp; Cohen Reading</span>, <span class="style4">PS=Problem Set Assigned: due 1-week later at start of class</span>)</p>
+        <table width="950" border="1" align="center" cellpadding="3" cellspacing="1" bordercolor="#0000FF" bgcolor="#FFFFFF">
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>I. Fundamental Fluid Concepts and Conservation Equations</strong></td>
+          </tr>
+          <tr>
+            <td width="80">W 9/30</td>
+            <td width="48"><a href="Lectures/I_1.pdf">I.1</a></td>
+            <td width="457">Organization, the scope of fluid mechanics and this class, the continuum hypothesis</td>
+            <td width="326"><span class="style2">KC 1.1-5</span></td>
+          </tr>
+          <tr>
+            <td width="80">F 10/2</td>
+            <td><a href="Lectures/I_2.pdf">I.2</a></td>
+            <td>Fluid parcel, Density, Pressure and its molecular origins, the net force on a fluid parcel due to  pressure</td>
+            <td><span class="style2">KC 1.7, 2.1-6</span></td>
+          </tr>
+          <tr>
+            <td width="80">M 10/5</td>
+            <td><a href="Lectures/I_3.pdf">I.3</a></td>
+            <td>The pressure gradient, hydrostatic balance</td>
+            <td class="style4"><a href="Homework/PS1.pdf">PS 1<br />
+            </a><span class="style2"><br />
+            KC 2.7-10</span></td>
+          </tr>
+          <tr>
+            <td width="80">W 10/7<br /></td>
+            <td><a href="Lectures/I_4.pdf">I.4</a></td>
+            <td>Velocity,  Lagrangian vs. Eulerian point of view, the material derivative</td>
+            <td class="style2">KC 3.1-7</td>
+          </tr>
+          <tr>
+            <td width="80">F 10/9</td>
+            <td><a href="Lectures/I_5.pdf">I.5</a></td>
+            <td><p>Conservation of mass, incompressible flow</p>            </td>
+            <td><span class="style6">Lab: Buoyancy and the Spar Buoy<br />
+              High-Bay area of the Ocean Sciences Building 1st floor (OCN) <a href="Lectures/Lab_1.pdf">pdf</a> <a href="http://www.washington.edu/maps/?l=OCN">map</a><br /> 
+            <span class="style2">KC 2.13, 3.13, 4.1-3, 4.18</span></span></td>
+          </tr>
+          <tr>
+            <td width="80">M 10/12</td>
+            <td><a href="Lectures/I_6.pdf">I.6</a></td>
+            <td>Gauss Divergence Theorem, Buoyancy,<br />
+            Momentum conservation (inviscid)</td>
+            <td><p class="style4"><a href="Homework/PS2.pdf">PS 2<br />
+            </a><span class="style2"><a href="Homework/PS1_answers.pdf">PS 1 Solutions</a></span><br />
+              <span class="style2">KC 4.4-8</span></p>            </td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>II. Scaling, the Shallow Water Equations, Waves, and the Bernoulli Function</strong></td>
+          </tr>
+          <tr>
+            <td width="80">W 10/14</td>
+            <td><a href="Lectures/II_1.pdf">II.1</a></td>
+            <td>Scaling: the Boussinesq and Hydrostatic Approximations</td>
+            <td class="style2">Holton 2.4.3, KC 4.18</td>
+          </tr>
+          <tr>
+            <td width="80">F 10/16</td>
+            <td><a href="Lectures/II_2.pdf">II.2</a></td>
+            <td>Shallow Water (SW) Equations</td>
+            <td><p class="style6">Lab: Wave Tank<br />
+              MacCready Lab OCN 147 (Ocean Sciences Building) <a href="http://www.washington.edu/maps/?l=OCN">map</a><a href="http://www.washington.edu/maps/?l=OCN"><br />
+              </a></p>            </td>
+          </tr>
+          <tr>
+            <td width="80">M 10/19</td>
+            <td><a href="Lectures/II_3.pdf">II.3</a></td>
+            <td>Shallow water waves I</td>
+            <td><span class="style4"><a href="Homework/PS3.pdf">PS 3</a><br />
+            <a href="Homework/PS2_answers.pdf">PS 2 Solutions</a><br />
+            </span><span class="style2">KC 7.1-3</span><span class="style4"><br />
+            </span></td>
+          </tr>
+          <tr>
+            <td width="80">W 10/21</td>
+            <td><a href="Lectures/II_4.pdf">II.4</a></td>
+            <td>Shallow water waves II</td>
+            <td class="style2">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>F 10/23</td>
+            <td><a href="Lectures/II_5.pdf">II.5</a></td>
+            <td>Bernoulli function</td>
+            <td class="style6"><p><span class="style2">KC 4.16-17</span><br />
+                    <span class="style6">Lab: Flume with flow over a bump<br />
+              OTB 206 (Ocean Teaching Building) <a href="http://www.washington.edu/maps/?l=OTB">map</a></span><br />
+            </p></td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>III. Viscosity and Energy</strong></td>
+          </tr>
+          <tr>
+            <td width="80">M 10/26</td>
+            <td><a href="Lectures/III_1.pdf">III.1</a></td>
+            <td>Viscosity, molecular origins, effects on momentum, Reynolds number, Couette flow</td>
+            <td class="style2">KC 9.1-6</td>
+          </tr>
+          <tr>
+            <td width="80">W 10/28</td>
+            <td><a href="Lectures/III_2.pdf">III.2</a></td>
+            <td> Viscosity continued...</td>
+            <td class="style4"><a href="Homework/PS3_answers.pdf">PS 3 Solutions</a><br /></td>
+          </tr>
+          <tr>
+            <td width="80">F 10/30</td>
+            <td><p><a href="Lectures/III_3.pdf">III.3</a><br />
+              <a href="Lectures/III_4.pdf">III.4</a><br />
+            </p></td>
+            <td>Energy: derivation of the KE  conservation equation<br />
+            Control Volume Analysis, Momentum Integral</td>
+        <td class="style6"><p><span class="style2">KC 4.8 again</span><span class="style2">, KC 4.13<br />
+          </span><span class="style6">Extra Hour Rooms:<br />
+          10:30 in LOW 113, 12:30 LOW 105</span><span class="style4"><br />
+          <a href="Homework/Midterm.pdf">Midterm Exam</a><br />
+          </span></p>          </td>
+          </tr>
+          <tr>
+            <td width="80">M 11/2</td>
+            <td>&nbsp;</td>
+            <td>MOVIE: Pressure Fields &amp; Fluid Acceleration</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="80">W 11/4</td>
+            <td>&nbsp;</td>
+            <td>MOVIE: Waves in Fluids</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="80">F 11/6</td>
+            <td><a href="Lectures/III_5.pdf">III.5</a></td>
+            <td>KE &amp; PE per unit volume</td>
+            <td class="style4"><a href="Homework/Midterm_answers.pdf">Midterm Solutions</a></td>
+          </tr>
+          <tr>
+            <td width="80">M 11/9</td>
+            <td><a href="Lectures/III_6.pdf">III.6</a></td>
+            <td>KE &amp; PE for Shallow Water Waves</td>
+            <td><a href="Homework/PS4.pdf">PS 4</a></td>
+          </tr>
+          <tr>
+            <td width="80"><span class="style10">W 11/11</span></td>
+            <td>&nbsp;</td>
+            <td><span class="style10">Veteran's Day Holiday</span></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>IV. Vorticity</strong></td>
+          </tr>
+          <tr>
+            <td width="80">F 11/13</td>
+            <td><a href="Lectures/IV_1-2.pdf">IV.1-2</a></td>
+            <td>Vorticity 1: Definitions and Examples</td>
+            <td><p class="style2"><span class="style6">Lab: Pool-Vortex Rings<br />
+              High-Bay area of the Ocean Sciences Building 1st floor (OCN)</span> <a href="http://www.washington.edu/maps/?l=OCN">map</a><br />
+              KC 5.1-4<br />
+              </p>            </td>
+          </tr>
+          <tr>
+            <td width="80">M 11/16</td>
+            <td>&nbsp;</td>
+            <td>Vorticity 2: Kelvin Circulation Theorem &amp; Helmholtz Vortex Theorems</td>
+            <td class="style4"><a href="Homework/PS4_answers.pdf">PS 4 Solutions</a><br />
+              <span class="style2">KC 5.5-7</span><br /></td>
+          </tr>
+          <tr>
+            <td width="80">W 11/18</td>
+            <td><a href="Lectures/IV_3.pdf">IV.3</a></td>
+            <td>Vorticity 3: Vorticity Equation</td>
+            <td><p class="style4"><a href="Homework/PS5.pdf">PS 5</a><br />
+                <span class="style2">KC 5.8-9</span><br />
+            </p>            </td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>V. Potential Flow</strong></td>
+          </tr>
+          <tr>
+            <td width="80">F 11/20</td>
+            <td><a href="Lectures/V_1.pdf">V.1</a></td>
+            <td>Potential Flow 1: Definitions</td>
+            <td class="style6">Open question session<br />
+            <span class="style2">KC 6.1-7</span><a href="http://www.washington.edu/maps/?l=OTB" class="style2"><br />
+            </a></td>
+          </tr>
+          <tr>
+            <td width="80">M 11/23</td>
+            <td><a href="Lectures/V_2.pdf">V.2</a></td>
+            <td>Potential Flow 2: Solutions</td>
+            <td class="style2">KC 6.8-9</td>
+          </tr>
+          <tr>
+            <td width="80">W 11/25</td>
+            <td><a href="Lectures/V_3.pdf">V.3</a></td>
+            <td>Potential Flow 3: Drag on a Cylinder</td>
+            <td class="style4"><a href="Homework/PS5_answers.pdf">PS 5 Solutions</a><br /></td>
+          </tr>
+          <tr>
+            <td width="80"><span class="style10">F 11/27</span></td>
+            <td><span class="style10"></span></td>
+            <td><span class="style10">Day-After-Thanksgiving Holiday</span></td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>VI. Deep-water Waves, 2-layer Stratification, K-H Instability</strong></td>
+          </tr>
+          <tr>
+            <td width="80">M 11/30</td>
+            <td><a href="Lectures/VI_1-2.pdf">VI.1-2</a></td>
+            <td>Deep water waves (nonhydrostatic)</td>
+            <td><p><a href="Homework/PS6.pdf">PS 6<br />
+            </a><span class="style2">KC 7.4-6</span></p>            </td>
+          </tr>
+          <tr>
+            <td width="80">W 12/2</td>
+            <td>&nbsp;</td>
+            <td>Dispersion, group velocity vs. phase speed</td>
+            <td class="style2">KC 7.7-10</td>
+          </tr>
+          <tr>
+            <td width="80">F 12/4</td>
+            <td><a href="Lectures/VI_3-5.pdf">VI.3-5</a></td>
+            <td>Instability of fluid flows</td>
+            <td class="style6"><p><span class="style6">Lab: 2-Layer Waves<br />
+  MacCready Lab OCN 147 (Ocean Sciences Building) <a href="http://www.washington.edu/maps/?l=OCN">map</a></span><a href="http://www.washington.edu/maps/?l=OTB"><br />
+            </a><span class="style2">KC 12.1-6</span></p>            </td>
+          </tr>
+          <tr>
+            <td width="80">M 12/7</td>
+            <td>&nbsp;</td>
+            <td>Kelvin-Helmholtz Instability</td>
+            <td><p class="style4"><a href="Homework/PS6_answers.pdf">PS 6 Solutions</a><br />
+            <a href="Homework/Final.pdf">Final Exam</a></p>            </td>
+          </tr>
+          <tr>
+            <td width="80">W 12/9</td>
+            <td>&nbsp;</td>
+            <td>K-H Instability, continued</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4" bgcolor="#99CCFF"><strong>VII. Compressibility</strong></td>
+          </tr>
+          <tr>
+            <td width="80">F 12/11</td>
+            <td><a href="Lectures/VII_1.pdf">VII.1</a></td>
+            <td><p>Effects of compressibility, Sound Waves<br />
+            </p>            </td>
+            <td class="style6"><p class="style2">KC 1.8-10 &amp; 16.1-2<br />
+                <span class="style6">Open question sessions: 406 Atmospheric Sciences Building <a href="http://www.washington.edu/maps/?l=ATG">map</a></span></p>
+            </td>
+          </tr>
+          <tr>
+            <td width="80">M 12/14</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><p class="style4">Final exam due 11:30 AM <br />
+            in box outside OSB 313<br />
+            <a href="Homework/Final_answers.pdf">Final Exam Answers</a> &amp; <a href="Homework/Final_Cylinder_dUdt.pdf">Extra  on Problem 3</a></p>
+            </td>
+          </tr>
+        </table>
+        <p><strong>RECOMMENDED BOOKS</strong></p>
+        <ul>
+          <li>Acheson, D. J. (1990) <strong>Elementary Fluid Dynamics</strong>. Oxford University Press, 397 pp. Simple and elegant. More emphasis on aeronautics.</li>
+          <li>Batchelor, G. K. (1967) <strong>An Introduction to Fluid Dynamics</strong>. Cambridge University Press, 615 pp. The classic text, authoritative, somewhat dated and difficult to get through early in your education. Definitely worth consulting when you need a deeper understanding.</li>
+          <li>Gill, A. E. (1982) <strong>Atmosphere-Ocean Dynamics</strong>. Academic Press, 662 pp. A wonderfully-broad introduction to the topic of geophysical flows, often with very insightful derivations and explanations. Often used as the primary reference text for GFD I.</li>
+          <li>Holton, J. (1979) <strong>An Introduction to Dynamic Meteorology</strong>. Very clear explanations of fluid mechanics and basic GFD, especially for atmospheric flow.</li>
+          <li>Tritton, D. J. (1977) <strong>Physical Fluid Dynamics</strong>. Van Nostrand Reinhold, 362 pp. A more casual, and intuitively-pleasing treatment of incompressible flow at small to medium scales. No free surfaces, but lots of discussion of how real flows are affected by turbulence.</li>
+          <li>Muller, P. (2006) <strong>The Equations of Oceanic Motion</strong>. Cambridge University Press, 291 pp. This is probably not suitable for beginners, but if eventually you want a really rigorous derivation of the equations we use, this is the best reference I have found.</li>
+          <li>Prandtl, L. and O. G. Tietjens (1934) <strong>Fundamentals of Hydro- and Aeromechanics</strong>. Dover Publications, 270 pp. A beautifully-written introduction by one of the great modern masters. Here you will see many of the derivations that have ended up in Kundu and Cohen.</li>
+        </ul>
+        <p><strong>FLUID MECHANICS MOVIES</strong></p>
+        <p>The classic series of Fluid Mechanics Movies, some of which we show, are  available on the web<br />
+            <a href="http://web.mit.edu/fluids/www/Shapiro/ncfmf.html">http://web.mit.edu/fluids/www/Shapiro/ncfmf.html<br />
+          </a>You have to download the free &quot;RealPlayer&quot; software to show these.</p>
+        <p><strong>LINKS</strong> (not necessarily as reliable as textbooks, but informative)</p>
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Category:Fluid_dynamics">The Wikipedia Fluid Mechanics Page</a></li>
+          <li><a href="http://www.physicalgeography.net/fundamentals/8a.html">Properties of Water</a></li>
+          <li><a href="http://www.ems.psu.edu/~bannon/moledyn.html">Properties of Air</a></li>
+        </ul>        <p><em>Updated
+          <!-- #BeginDate format:Am1 -->December 11, 2009<!-- #EndDate -->
+        </em></p></td>
+  </tr>
+  </table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LiveOcean Homepage</title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134450556-1');
+</script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  <div class="container">
+    <div class="col">
+      <h3 class="itemc">Today's Forecasts</h3>
+      <div class="choice_f"><a href="../LO/p5_full_salt_top.html">Full Region Surface Salinity and Drifters</a></div>
+      <div class="choice_f"><a href="../LO/p5_full_oxygen_bot.html">Full Region Bottom Oxygen</a></div>
+      <div class="choice_f"><a href="../LO/p5_nshelf_oxygen_bot.html">Washington Shelf Bottom Oxygen (5 days)</a></div>
+      <div class="choice_f"><a href="../LO/p5_PS_temp_top.html">Puget Sound Surface Temperature</a></div>
+      <div class="choice_f"><a href="../LO/p5_PS_speed_top.html">Puget Sound Surface Currents</a></div>
+      <div class="choice_f"><a href="../LO/p5_willapa_ARAG_top.html">Coastal Estuaries Surface Ocean Acidification</a></div>
+      <div class="choice_f"><a href="../LO/p5_willapa_ARAG_bot.html">Coastal Estuaries Bottom Ocean Acidification</a></div>
+      <div class="choice_f"><a href="../LO/p5_Phab_full_salt_top.html">Full Region Surface Salinity and Drifters with Close-ups</a></div>
+    </div>
+    <div class="col">
+      <h3 class="itemc">New</h3>
+      <div class="choice_new"><a href="../LO/tracks_full.html">Surface Drifter Tracks - full domain</a></div>
+      <div class="choice_new"><a href="../LO/tracks_PS.html">Surface Drifter Tracks - Puget Sound</a></div>
+      <h3 class="itemc">About the Model</h3>
+      <div class="choice"><a href="../LO/how_it_works.html">How the Model Works</a></div>
+      <div class="choice"><a href="../LO/how_we_test_it.html">How We Test the Model</a></div>
+      <div class="choice"><a href="http://nvs.nanoos.org/Explorer?action=overlay:liveocean_temp">Real-Time Data from the NANOOS NVS Site</a></div>
+    </div>
+    <div class="col">
+      <h3 class="itemc">Background</h3>
+      <div class="choice"><a href="../LO/tides_background.html">How Tides Work in Puget Sound</a></div>
+      <div class="choice"><a href="../LO/long_term_trends.html">Observed Long-term Trends in Puget Sound Water Properties</a></div>
+      <div class="choice"><a href="../LO/exchange_flow.html">The Estuarine Exchange Flow</a></div>
+      <div class="choice"><a href="../LO/references.html">References</a></div>
+    </div>
+    <div class="col">
+      <h3 class="itemc">Gallery</h3>
+      <div class="choice"><a href="../LO/salinity_year.html">A Year of Modeled Salinity</a></div>
+      <div class="choice"><a href="../LO/oxygen_year.html">A Year of Modeled Oxygen</a></div>
+      <div class="choice"><a href="../LO/phytoplankton_year.html">A Year of Modeled Phytoplankton</a></div>
+    </div>
+  </div>
+  <hr class="container">
+    
+    
+  <div class="container"> 
+    <div class="left">
+      <h3>LiveOcean is a computer model simulating ocean water properties.
+        It makes 3-day forecasts of currents, temperature, salinity
+        and many biogeochemical fields including harmful algal blooms.</h3>
+      <p>LiveOcean is an ongoing project of the UW Coastal Modeling Group: <a href="../index.html">Dr. Parker MacCready</a> (UW Oceanography, lead), <a href="https://samanthasiedlecki.wixsite.com/coastalbiogeodynlab">Dr. Samantha Siedlecki</a> (U.
+        Connecticut,
+        oxygen &amp; carbon chemistry), <a href="https://jisao.uw.edu/research/principal-investigators/ryan-m-mccabe/">Dr. Ryan McCabe</a> (UW JISAO,
+        validation), <a href="http://neilbanas.com/projects/">Dr. Neil Banas</a> (University of Strathclyde, Scotland, ecosystem
+        modeling),
+        and David Darr (computational systems).</p>
+      <p>The model output presented here is part of ongoing research into the
+        realistic simulation of ocean biology and chemistry.
+        This is an experimental product and intended for research use only.
+        Our goal in making it publicly available is to facilitate communication between
+        resource users, managers, and scientists, and to improve the quality and
+        utility of the forecasts. Any use of these forecasts is
+        done at the risk of the user.</p>
+      <p>Questions or comments? Please email Parker MacCready: pmacc@uw.edu</p>
+    </div>
+      <img class="right" src="Figs/splash.png" alt="Surface Salinity" width="100%">
+  </div>
+  <hr class="container">
+  <div class="container">
+    <div class="col"><img src="Figs/WOAC_logo.png" alt="Coastal Modeling Group Logo" width="100%"></div>
+  </div>
+  <hr class="container">
+  <div class="container">
+    <div class="footer">
+      <p>Last edited <span id="edit_date"></span></p>
+      <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+        </script> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

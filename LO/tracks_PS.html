@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Interactive Particle Tracking - Puget Sound </title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+</head>
+<body>
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-134450556-1');
+    </script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  <div class="container">
+    <div id="myDiv" class="left"> 
+      <script src="jspm/tracks_PS_p5.js"></script> 
+    </div>
+    <div class="right">
+      <h3> Particle tracks from the surface flow for the most recent 14 days - through the end of today's three-day forecast. </h3>
+      <p> Touch, on the the map to see individual clusters of tracks.  The lines show where surface drifters released near that point in the model travelled over the past two weeks.  The lines grow thicker and redder over their distance/time.</p>
+      <p>By exploring patterns over the whole map you can find important features of circulation in the Salish Sea. Drifters move landward and seaward, often 10 km or more, with the twice-a-day tides.  They also tend to move persistently seaward over the 14 days, forming the upper, outgoing, branch of the <a href="exchange_flow.html">estuarine exchange flow</a>.</p>
+      <p>This is an instance of the <a href="https://neilbanas.com/projects/flowweaver/">flowWeaver</a> project for interactive model visualization, founded by <a href="https://neilbanas.com/projects/">Neil Banas</a>.</p>
+    </div>
+  </div>
+  <hr class="container">
+  <div class="container">
+    <div class="footer">
+      <p> Last edited <span id="edit_date"></span> </p>
+      <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+          </script> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

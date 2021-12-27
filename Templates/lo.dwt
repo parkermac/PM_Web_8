@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content='width=device-width' /> -->
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link href="../CSS/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #BABABA;
+}
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-134450556-1');
+</script>
+
+
+</head>
+
+<body>
+
+<div class="container">
+ 
+  <div class="header">
+    <h2><em><a href="../LO/LiveOcean.html">LiveOcean</a>: Pacific Northwest Ocean and Estuary Forecasts</em></h2>
+    <h3>
+    
+    TODAY'S Forecast Movies:<br>
+    <a href="../LO/P_basic.html">Full Domain T and s</a> | <a href="../LO/P_basic_salish.html">Puget Sound T and s</a><br>
+    <a href="../LO/P_DO.html">Bottom Oxygen: Past 60 Days</a> | <a href="../LO/P_Chl_DO_salish.html">Puget Sound Chl and DO</a><br>
+    <a href="../LO/forecast_merhab.html">Coastal Particle Tracks</a> | <a href="../LO/P_tracks_barber.html">Puget Sound Particle Tracks</a><br>
+    <a href="../LO/forecast_willapa_oa.html">Willapa Bay Ocean Acidification </a>
+    
+    </h3>
+    
+    <hr>
+  </div>
+  
+  
+  
+<div class="content"><!-- TemplateBeginEditable name="EditRegion4" -->
+  <h2>Title</h2>
+  <h3>Subtitle</h3>
+  <p>Text</p>
+<!-- TemplateEndEditable --></div>
+  
+  <div class="footer"><hr>
+<em>Last edited
+  <!-- #BeginDate format:Am1 -->September 17, 2020<!-- #EndDate --></em></div>
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SciDAC Project</title>
+<style type="text/css">
+body,td,th {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+body {
+	margin-left: 100px;
+	margin-top: 20px;
+	margin-right: 100px;
+	margin-bottom: 20px;
+}
+a:link {
+	text-decoration: none;
+	color: #787878;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<h4 style="text-align: right"><em>Last edited 
+  <!-- #BeginDate format:Am1 -->October 31, 2016<!-- #EndDate -->
+</em></h4>
+<h2>Notes on the downscaling experiments conducted by <a href="../index.html">Parker MacCready</a> as part of the <a href="http://www.cgd.ucar.edu/staff/ytseng/research/Salinity/main.html">SciDAC project</a> on improved representation of freshwater sources in global climate models.</h2>
+<h1>Run Log</h1>
+<h3>B2002, C2003-9</h3>
+<ul>
+  <li>This is a quasi-continuous 8-year run on the Cascadia grid using all &quot;standard&quot; forcing (NCOM, MM5/WRF, USGS rivers, TPXO tides).</li>
+  <li>The forcing files were created by Sarah Giddings as part of the PNWTOX project, and the model set-up is essentially identical to that documented in <a href="../publications.html">Giddings et al. (2014)</a>.</li>
+  <li>These have: hourly saves, all heat fluxes, no dye, no bio, history files in OUT/, and take about 714 GB storage per year. They were run on hopper.</li>
+  <li>Each year was first run as a &quot;B&quot; run, initialized from NCOM. Then the &quot;C&quot; years were initialized using ocean_rst.nc from the end of the previous B year run, so all the C years represent the second year of a two year run. Since it takes about 3 months for a run to &quot;forget&quot; its initial conditions the C years should be very similar to what we would get from running all 8 years sequentially.</li>
+  <li>Storedon <strong>boiler</strong> in /data1/parker/roms/output/[B2002, C2003-2009]</li>
+  <li>Tidally averaged versions (Godin-filtered) with daily saves are stored in /pmr1/pmraid3-bk2/parker/cascadia_lp/[B2002_lp, C2003-2009_lp], about 30 GB per year.</li>
+</ul>
+<h3>J2005</h3>
+<ul>
+  <li>Like C2005 but using initialization from NCOM (essentially like B2005)</li>
+  <li>Stored in /glade/p/cgd/oce/people/paulmac/roms/output</li>
+  <li>Hourly saves 713 GB</li>
+</ul>
+<h3>Jcam2005</h3>
+<ul>
+  <li>Like J2005 but with CAM atmospheric forcing fields (in atm_cam/)</li>
+  <li>Stored in/glade/p/cgd/oce/people/paulmac/roms/output</li>
+  <li>Hourly saves 713 GB</li>
+</ul>
+<h3>Tpop2005</h3>
+<ul>
+  <li>Like J2005 but with POP ocean initialization and forcing (in ocn_pop).</li>
+  <li>Run on Yellowstone, history files not in OUT/, first use of new directory structure.</li>
+  <li>Stored in /glade/p/cgd/oce/people/paulmac/roms/output</li>
+  <li>Hourly saves 797 GB</li>
+</ul>
+<h3>Cdia2005</h3>
+<p>Like C2005 but with most diagnostics and averages saved. Total size is about 5.2 TB.</p>
+<p>Stored on <strong>boiler</strong> in /data1/parker/roms/output/Cdia2005_[his, avg, dia]/</p>
+<h3>S[45, 85]_OcAcT2005R2005_[2005, 2099] (four runs)</h3>
+<p>&quot;Parker, the four forcing configurations I provided are “free runs”. They are from the CESM contributions to CMIP5: 2005-2099 future projection. But the other cases, JCAM2005 and Tpop2005 on your list,  they are from the CAM and POP reanalysis specifically for 2005.&quot; Note from Yu-Heng 4/1/2015</p>
+<ul>
+  <li>These are forced using CESM &quot;free run&quot; atmospheric (CAM) and ocean (POP) values.</li>
+  <li>Naming convention:
+    <ul>
+    <li>S[45, 85] refers to which RCP the forcing comes from 4.5 or 8.5 (I also hve 6.0 but did no runs with it)</li>
+    <li>OcAc means that both Ocean and Atmosphere ofrcing came from CESM</li>
+    <li>T2005 means that the tide forcing file came from 2005</li>
+    <li>R2005 means that the river forcing file came from (my USGS-based) 2005, the same as used for J2005, etc.</li>
+    <li>_[2005, 2099] the year of the CESM forcing</li>
+  </ul>
+  </li>
+  <li>Stored on <strong>boiler</strong> in /data1/parker/roms/output</li>
+  <li>Daily saves 35 GB</li>
+</ul>
+<h3>Notes on the S-series forcing files (Yu-heng Tseng 2014/1/8)</h3>
+<p>~/UNIX_SCRIPTS/run_storage_download.csh_YR2099<br>
+  ~/UNIX_SCRIPTS/run_cut_domain_for_ROMS_YR2099.csh<br>
+  YEAR 2099<br>
+  CCSM4 1deg RCP8.5 Ensemble Member #7<br>
+  /glade/p/cgd/oce/people/ytseng/ROMS_FORCING/b40.rcp8_5.1deg.007<br>
+  CCSM4 1deg RCP6.0 Ensemble Member #6<br>
+  /glade/p/cgd/oce/people/ytseng/ROMS_FORCING/b40.rcp6_0.1deg.006<br>
+  CCSM4 1deg RCP4.5 Ensemble Member #6<br>
+/glade/p/cgd/oce/people/ytseng/ROMS_FORCING/b40.rcp4_5.1deg.006</p>
+<p>each directory includes the following directories<br>
+  atforcin:atmospheric CAM forcing<br>
+  interior/domain_40_55N_136_120W:oceani pop data (SALT, SSH, TEMP, UVEL and VVEL)<br>
+  lnd/proc/tseries/monthly: runoff data <br>
+  b40.rcp4_5.1deg.006.RUNOFF.2099-xx.nc <br>
+  b40.rcp6_0.1deg.006.RUNOFF.2099-xx.nc<br>
+  b40.rcp8_5.1deg.007.RUNOFF.2099-xx.nc<br>
+The runoff data has the same dimension as the other ocean data (2D). (Maximum at i=11, j=14)</p>
+<p>For each RCP scenario, there is &quot;only one&quot; simulation (MOAR) which has 3hrly coupler output (for atmosphere).It also has daily UVEL and VVEL. <br>
+  2005 data is also available there. But the data is different from the data assimilated POP/CAM forcing I provide earlier (c.da48.2c).</p>
+<p>Also 2005 is also there. Let me know if you find anything else missing.</p>
+<p>These cases have the same initial condition of 2005 to rcp8.5 (luckily, this is the year we start the simulation). So the first year climate mean status will not differ too much for these scenarios.<br>
+  For rcp2.6 scenario, there is no high-frequency output. So, we cannot run that.<br>
+  Then we can compare rcp4.5 2099, rcp6.0 2099, rcp 8.5 2099 and rcp 8.5 2005 all together.</p>
+</body>
+</html>

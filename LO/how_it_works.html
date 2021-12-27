@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How the Model Works</title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134450556-1');
+</script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  <div class="container">
+    <div class="item">
+    <h2>How the model works</h2>
+    <h3>Overview</h3>
+    <p>LiveOcean works a lot like the weather forecast models that we all rely on every day. It takes in information about the state of the ocean,  atmosphere and rivers on a given day, and then uses the laws of physics (and a large computer) to predict how the state of the ocean in our region will change over the next few days. The things that the model predicts are currents, salinity, temperature, chemical concentrations of nitrate, oxygen, carbon, and biological fields like phytoplankton, zooplankton, and organic particles. It does this in three dimensions, and allowing continuous variation over the full 72 hour forecast it makes every day.</p>
+    <h3>The grid</h3>
+    <div class="itemc"><img src="Figs/grid_and_rivers.png" alt="Grid and Rivers" width="100%"/></div>
+    <p>The model grid is shown above. The model horizontal resolution is 500 m in the Salish Sea and near the Washington coast, growing to 1500 m at the southern Oregon border and offshore. It is designed to seamlessly simulate the interactions of the coastal ocean, the coastal estuaries like the Columbia River, Willapa Bay and Grays Harbor, as well as the whole Salish Sea (Puget Sound, the Strait of Georgia, and the Strait of Juan de Fuca). It has 45 rivers representing the largest freshwater sources (the red lines in the left hand plot above). Vertically the model grid has 30 layers, distributed between the sea surface and the sea floor, with closer grid spacing near the surface and bottom to better resolve these important regions.</p>
+    <h3>The model framework</h3>
+    <p>The model framework we use is called the Regional Ocean Modeling System (<a href="https://www.myroms.org/">ROMS</a>) which is a large, flexible computer code that is used by coastal and estuarine oceanographers around the world to simulate different regions. It is known to have excellent numerical properties, such as low numerical diffusion, many choices for turbulence parameterization and open boundary conditions, built-in biogeochemical models, and a large, active user community. We have been using ROMS for realistic simulations in the region for research projects for the past decade and have found it to be a robust tool.</p>
+    <h3>Bathymetry</h3>
+    <p>To format the model for our region we first need to define the region and the grid size. The grid has to have fine enough resolution to resolve important physical processes like headland eddies and internal waves, but it also has to run fast enough to allow extensive testing. The current configuration is optimized based on our experience with previous projects. The bathymetry, or bottom depth, comes from a variety of sources, including a compilation of Puget Sound data made at UW.</p>
+    <h3>Model forcing</h3>
+    <div class="itemc"><img src="Figs/lo_system.png" width="100%" alt="LiveOcean system sketch"/></div>
+    <p>The environmental information we use to force the model comes from the outer boundaries. At the sea surface we force the model with winds, heating by sunshine, and other exchanges of heat with the atmosphere like evaporation. The atmospheric fields come from the regional weather forecast model run by Dr. Cliff Mass' group at UW. Weather models tend to make fairly good forecasts (at least for a few days) because they are initialized each day using observations from the real world. The same is true of the forcing of the ocean state we use at the open boundaries in the Pacific, which come from a global ocean model run by the Navy called <a href="https://hycom.org/">HYCOM</a>. HYCOM assimilates observations from satellites, drifting <a href="http://www.argo.ucsd.edu/About_Argo.html">ARGO</a> floats, and other sources that ensure that the currents and stratification we are imposing at our open boundaries are very close to what is really happening. For water properties HYCOM only gives us temperature and salinity but we need information on Dissolved Oxygen, Nitrate, Alkalinity, and Total Inorganic Carbon. We get these by using regressions against salinity using data collected by NOAA. Forcing for the rivers comes from the flow gauges maintained by USGS and Environment Canada. These flows need to be adjusted for ungauged watershed area, and we get these adjustment factors from the Washington State Department of Ecology. We also need to know river temperature. Only a handful of our 45 rivers have temperature recorders, so we estimate the temperature based on temperature climatologies we have developed for nearby rivers. The last type of forcing needed is for tides. We use a global estimate of 8 tidal frequencies created by researchers at Oregon State University to generate tidal variation at our open ocean boundaries, and this in turn generates the tides all the way into the Salish Sea. Getting the tides right in Seattle is one of the first tests of model skill that we look at because tides drive the mixing in the Salish Sea, an essential ingredient governing our water quality and ecosystem function.</p>
+    <h3>Running the model</h3>
+    <p>These four types of forcing are generated automatically on a computer at UW every morning starting around 1 AM. then at 4 AM, if everything is in place, a UW super computer (a cluster of 196 computers working together on the same calculation) runs that day's 72 hour forecast. The output is stored in hourly snapshots and archived on another computer where automated post-processing is done. The results for a given day's forecast appear as some movies and figures on the LiveOcean website. The whole batch of output fields can be viewed, on a number of different depth levels on the <a href="http://nvs.nanoos.org/Explorer?action=overlay:liveocean_salt">NANOOS NVS</a> website. Notably, on NVS the model is integrated with many instruments that make observations in real time in our waters. After clicking on one of the buoys on the map, the NVS &quot;Comparator&quot; tool allows you to make direct comparisons of modeled and observed properties, especially for surface waters, over the past few days. This is one way that we test how well the model is doing, but the more important way, described on <a href="how_we_test_it.html">this page</a>, is to compare with longer term records, like a whole year of CTD/Bottle casts from Ecology, or a whole year of USGS tide gauge data.</p>
+    <h3>What we do with the model predictions</h3>
+    <p>The model fields are also sent to the <a href="https://eds.ioos.us/">NOAA IOOS EDS</a> data viewer. Portions of the model fields are used as open boundary conditions by researchers in Canada and Oregon who run their own forecast models that have smaller domains.</p>
+    <p>A really important part of the LiveOcean model is that it simulates chemical and biological fields, like phytoplankton, dissolved oxygen, and ocean acidification properties like pH and &quot;Aragonite saturation state&quot; (which tells you how hard it may be for larval oysters to form shells). Funding for the model comes from two main sources. The state of Washington, through the Washington Ocean Acidification Center, has tasked us with creating short term forecasts of ocean acidification that will be useful to our shellfish aquaculture industry. Did you know that about one in eight of oysters consumed in the US come just from our own Willapa Bay? A similar amount comes from Totten Inlet in south Puget Sound, so it is essential that we have good tools to understand how the environment affecting these places may be affected by changing rivers, human nutrient addition like treated sewage and runoff, marine heat waves (like the &quot;Blob&quot; of 2014-2016) and climate change. The other source of funding for LiveOcean is NOAA, through a program called MERHAB which is designed to help our Department of Health anticipate the Harmful Algal Blooms (HABs) that can shut down the razor clam harvest on the coast, at great cost to our coastal communities. We combine observations of HAB species in the water and on the beach, made by a coalition of Tribal, state, and federal scientists, with short term model predictions of where surface water will go in the next three days. All this information is combined in a HAB Bulletin given to the resource managers so that they have the best possible science available to them in a format they can use.</p>
+    <h3>Want to learn more?</h3>
+    <p>To learn more about how the model fields compare to observations, go to <a href="how_we_test_it.html">this page</a>. To learn more about the details of model construction the best source is in our <a href="references.html">published papers</a>. </p>
+    <h3><em>Got a specific question, or have an idea for something you would like to see in the forecast? Please contact the project lead, Dr. Parker MacCready at UW School of Oceanography: pmacc@uw.edu, (206) 685-9588.</em></h3>
+  </div>
+     
+</div>
+<hr class="container">
+<div class="container">
+  <div class="footer">
+    <p>Last edited <span id="edit_date"></span></p>
+    <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+        </script> 
+  </div>
+</div>
+</div>
+</body>
+</html>

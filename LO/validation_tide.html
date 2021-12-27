@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LiveOcean Tide Validation</title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134450556-1');
+</script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  <div class="container">
+    <div class="item">
+      <h2>Validation: Comparison of the Model with Observed Sea Surface Height</h2>
+      <h3>Comparisons of model sea surface height (SSH) with observations from 21 NOAA and Environment Canada Tide Stations.  Averaging over all stations the RMS Error is 31 cm.</h3>
+      <h3><strong><em>Click on a marker on the map to see a plot of the model-data comparisons for any station.</em></strong></h3>
+      <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 900px;  /* The height is ## pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+      <!--The div element for the map -->
+      <div id="map"></div>
+      <script>
+// Initialize and add the map
+function initMap() {
+	var ctr = {lat: 48, lng: -123};
+	var map = new google.maps.Map(
+	  document.getElementById('map'), {zoom: 7, center: ctr});
+	
+function offsetCenter(latlng, offsetx, offsety) {
+
+    // latlng is the apparent centre-point
+    // offsetx is the distance you want that point to move to the right, in pixels
+    // offsety is the distance you want that point to move upwards, in pixels
+    // offset can be negative
+    // offsetx and offsety are both optional
+
+    var scale = Math.pow(2, map.getZoom());
+
+    var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
+    var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
+
+    var worldCoordinateNewCenter = new google.maps.Point(
+        worldCoordinateCenter.x - pixelOffset.x,
+        worldCoordinateCenter.y + pixelOffset.y
+    );
+
+    var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+
+    map.setCenter(newCenter);
+
+}
+	
+sta_list = [
+    {sta:"Charleston", lat:43.3450, lng:-124.3220},
+    {sta:"South_Beach", lat:44.6250, lng:-124.0430},
+    {sta:"Garibaldi", lat:45.5545, lng:-123.9189},
+    {sta:"Toke_Point", lat:46.7075, lng:-123.9669},
+    {sta:"Westport", lat:46.9043, lng:-124.1051},
+    {sta:"La_Push", lat:47.9133, lng:-124.6370},
+    {sta:"Neah_Bay", lat:48.3703, lng:-124.6019},
+    {sta:"Port_Angeles", lat:48.1247, lng:-123.4411},
+    {sta:"Friday_Harbor", lat:48.5453, lng:-123.0129},
+    {sta:"Cherry_Point", lat:48.8633, lng:-122.7580},
+    {sta:"Port_Townsend", lat:48.1129, lng:-122.7595},
+    {sta:"Seattle", lat:47.6026, lng:-122.3393},
+    {sta:"Tacoma", lat:47.2667, lng:-122.4133},
+    {sta:"Point_Atkinson", lat:49.3370, lng:-123.2530},
+    {sta:"Vancouver", lat:49.2870, lng:-123.1100},
+    {sta:"Patricia_Bay", lat:48.6536, lng:-123.4515},
+    {sta:"Victoria_Harbour", lat:48.4247, lng:-123.3707},
+    {sta:"Bamfield", lat:48.8360, lng:-125.1360},
+    {sta:"Tofino", lat:49.1540, lng:-125.9130},
+    {sta:"Campbell_River", lat:50.0420, lng:-125.2470},
+    {sta:"New_Westminster", lat:49.2000, lng:-122.9100},
+];
+
+
+	  // Add multiple markers to map
+	var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+	
+	for(var i = 0, size = sta_list.length; i < size ; i++){
+		  
+		var sta = sta_list[i];
+		
+		var contentStuff = ('<h3>'+sta.sta+'</h3>'
+							+'<p><img src="Figs_validation/tide/'+sta.sta+'.png" alt="" width="100%"/></p>');
+		
+		var marker = new google.maps.Marker({title:sta.sta, position: sta, map: map});
+		
+		// Add info window to marker    
+		google.maps.event.addListener(marker, 'click', (function(marker, i, contentStuff) {
+			return function() {
+				infoWindow.setContent(contentStuff);
+				infoWindow.open(map, marker);
+				offsetCenter(marker.getPosition(), 0, -200);
+			}
+		})(marker, i, contentStuff));
+
+	} // end of station list loop
+		
+} // end of initMap()
+    </script> 
+      <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiuvW4KM--vHY2srR-hGRWG6aEbma97cI&callback=initMap">
+    </script></div>
+  </div>
+  <hr class="container">
+  <div class="container">
+    <div class="footer">
+      <p>Last edited <span id="edit_date"></span></p>
+      <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+        </script> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

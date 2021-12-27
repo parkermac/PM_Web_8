@@ -1,0 +1,52 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content='width=device-width' /> -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Notes on making movies</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../CSS/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #BABABA;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+ 
+  <div class="header"><a href="http://www.washington.edu/">UW</a> | <a href="http://coenv.washington.edu/">College of the Environment</a> | <a href="http://www.ocean.washington.edu/">School of Oceanography</a> | <a href="http://www.ocean.washington.edu/story/Physical+Oceanography">Physical Oceanography</a></div>
+  
+  <div class="header2"><strong>Parker MacCready</strong> : <a href="../index.html">Home</a> | <a href="../cmg/cmg.html">Research</a> | <a href="../people.html">People</a> | <a href="../classes.html">Classes</a> | <a href="../publications.html">Publications</a> | <a href="LiveOcean.html">LiveOcean</a> | <a href="tools.html">Tools</a><hr></div>
+  
+<div class="content"><!-- InstanceBeginEditable name="EditRegion4" -->
+  <h2>Making Movies</h2>
+  <h3 class="red">Notes on how to get and use ffmpeg to make .mp4 movies from stacks of .png's</h3>
+  <p>Krisen Thyng helped me with this. This is definintely the best tool I have found for making movies from model output. It works on my mac and my linux boxes, and can be automated as part of other code like python.</p>
+  <p>I think I already had it on my linux machine (fjord). On my mac I first had to get brew, using this command:</p>
+  <p><strong>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</strong></p>
+  <p>then execute: <strong>brew install ffmpeg </strong>then &quot;which ffmpeg&quot; should give: /usr/local/bin/ffmpeg  </p>
+  <p>As an example of how to use it, I put this alias in my .bashrc</p>
+  <h3><strong>alias make_movie='ffmpeg -r 8 -i plot_%04d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 movie.mp4'</strong></h3>
+  <p>and here is a snippet from python code that calls it:</p>
+  <p> ff_str = (&quot;ffmpeg -r 8 -i &quot; + outdir + &quot;plot_%04d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 &quot; + outdir + &quot;movie.mp4&quot;)<br>
+os.system(ff_str)</p>
+  <p>these assume you have a folder full of .png plots with sequential names like plot_0001.png and so on. One quirk is that ffmpeg requires an even number of pixels in both directions. For some reason this is never a problem with matplotlib figures. When I had trouble with this in MATLAB I solved it with some formatting lines like:</p>
+  <p> set(gcf,'PaperPositionMode','auto');<br>
+set(gcf,'position',[100 100 1000.5 600]); % note the .5</p>
+<!-- InstanceEndEditable --></div>
+  
+  <div class="footer"><hr>
+<em>Last edited
+  <!-- #BeginDate format:Am1 -->June 23, 2020<!-- #EndDate --></em></div>
+  
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

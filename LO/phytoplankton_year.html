@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LiveOcean Phytoplankton Movie</title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134450556-1');
+</script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  
+  <div class="container"> 
+    <div class="item"><h2>A year of Phytoplankton in the Salish Sea and Pacific Northwest Coast</h2></div>
+  <div class="itemc">
+    <video width="100%" controls loop >
+      <source src="Figs/superplot_chl.mp4" type="video/mp4">
+    </video>
+ </div>
+  <div class="item"><p>The movie above shows a full year of phytoplankton concentration simulated by the LiveOcean model. The colorscale -  blue to red - goes from zero to 25 mg of Chlorophyll per cubic meter. Phytoplankton, the base of the marine food chain, are tiny photosynthetic organisms that drift with the currents. They need two things to grow: nutrients and light. Along the US West Coast nutrients are brought to the surface (where light can penetrate the water) mostly by winds. Winds from the north, which happen primarily in the summer in the Pacific Northwest, push the surface water to the south. The Coriolis force, caused by the Earth's rotation, deflects that water to the right, and hence offshore. In its place water is pulled up from deeper (&quot;upwelling&quot;) and brings nutrients with it. In the Pacific Northwest nutrients also are pulled up in canyons and cycled through the <a href="exchange_flow.html">estuarine circulation</a> of the Salish Sea, significantly boosting phytoplankton growth above what the winds alone would do. Within Puget Sound you can see that some bays are highly productive, in common with estuaries around the world.</p> </div>
+  </div>
+    
+  <hr class="container">
+    
+  <div class="container">
+    <div class="footer">
+      <p>Last edited <span id="edit_date"></span></p>
+      <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+        </script> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

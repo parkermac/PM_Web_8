@@ -1,0 +1,68 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content='width=device-width' /> -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Topography info</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../CSS/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #BABABA;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+ 
+  <div class="header"><a href="http://www.washington.edu/">UW</a> | <a href="http://coenv.washington.edu/">College of the Environment</a> | <a href="http://www.ocean.washington.edu/">School of Oceanography</a> | <a href="http://www.ocean.washington.edu/story/Physical+Oceanography">Physical Oceanography</a></div>
+  
+  <div class="header2"><strong>Parker MacCready</strong> : <a href="../index.html">Home</a> | <a href="../cmg/cmg.html">Research</a> | <a href="../people.html">People</a> | <a href="../classes.html">Classes</a> | <a href="../publications.html">Publications</a> | <a href="LiveOcean.html">LiveOcean</a> | <a href="tools.html">Tools</a><hr></div>
+  
+<div class="content"><!-- InstanceBeginEditable name="EditRegion4" -->
+  <h2>Topography files</h2>
+  <p>These are NetCDF files of gridded bathymetry from a variety of different sources, with different spatial resoluton. They are useful for creating ROMS grid files. The default format of the processed files has vectors of decimal degree lat and lon (-180:180) and a matrix of z (meters, positive up, zero at about sea level). The matix of z is plaid in the matlab sense, and so only requires vectors of lat and lon to fully specfy location.</p>
+  <p>The current inventory of final files is shown below. The files are in ptools_data/topo/, each in a sub directory with the name shown in the title of the plot. Each sub directory also has pre-processing files and a README.</p>
+  <table width=100% border="1" cellpadding="10">
+        <tr>
+          <td width="478"><p><em>GLOBAL</em>          </p>
+            <p>Resolution = 500 m</p>
+          <p>A global dataset created from satellites and ship measurements.  This is an updated version of the Smith & Sandwell bathymetry. Great coverage. Could be extracted over a larger domain.</p></td>
+          <td width="426"><img src="Figs_topo/topo15.png" width="423" height="606" alt=""/></td>
+      </tr>
+        <tr>
+          <td><p><em>REGIONAL</em>          </p>
+            <p>Resolution = 0.4 km</p>
+          <p>This is a combination of psdem (183 m), cascadia (250 m) and Smith and Sandwell (old version 2 km) created by Dave Sutherland for the MoSSea project.</p>
+          <p>&nbsp;</p></td>
+          <td><img src="Figs_topo/cascadia_gridded.png" width="406" height="492" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p><em>PUGET SOUND</em>          </p>
+            <p>Resolution = 27 to 183 m</p>
+          <p>From David Finlayson's PSDEM 2005 Puget Sound bathymetry. We have extractions at 27, 91, and 183 m resolution (even down to 9 m unprocessed).</p></td>
+          <td><img src="Figs_topo/PS_27m.png" width="383" height="404" alt=""/></td>
+        </tr>
+        <tr>
+          <td><p><em>LOCAL</em>          </p>
+            <p>Resolution = 27 m</p>
+          <p>Very high-resolution bathymetry from the R/V Thompson, processed by Sally Warner and interpolated onto the PSDEM 27 m data. The patch is only in a region  of a few km around Three Tree Point.</p></td>
+          <td><img src="Figs_topo/TTP_Regional_27m_patch.png" width="367" height="492" alt=""/></td>
+        </tr>
+    </table>
+<!-- InstanceEndEditable --></div>
+  
+  <div class="footer"><hr>
+<em>Last edited
+  <!-- #BeginDate format:Am1 -->November 3, 2018<!-- #EndDate --></em></div>
+  
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

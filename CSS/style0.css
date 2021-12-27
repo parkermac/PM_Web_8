@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+  box-sizing: border-box;
+}
+a {
+  color: darkblue;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* ~~this container surrounds the other divs~~ */
+.container0 {
+  max-width: 1200px;
+  margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+  background-color: azure;
+}
+.title {
+  float: left;
+  padding: 7px;
+  width: 100%;
+  background-color: skyblue;
+  text-align: center;
+}
+.item {
+  float: left;
+  padding: 7px;
+  width: 100%;
+  
+}.itemc {
+  float: left;
+  padding: 7px;
+  width: 100%;
+  text-align: center;
+}
+.choice_new {
+  float: left;
+  padding: 10px;
+  width: 100%;
+  background-color: plum;
+  margin: 3px;
+  border-radius: 10px;
+  text-align: center;
+}
+.choice_f {
+  float: left;
+  padding: 10px;
+  width: 100%;
+  background-color: aquamarine;
+  margin: 3px;
+  border-radius: 10px;
+  text-align: center;
+}
+.choice {
+  float: left;
+  padding: 10px;
+  width: 100%;
+  background-color: lightblue;
+  margin: 3px;
+  border-radius: 10px;
+  text-align: center;
+}
+.container {
+  width: 100%;
+  clear: both
+}
+.footer {
+  padding: 0px 12px 3px 12px; /* top | right | bottom | left */
+  font-style: italic;
+  font-size: smaller;
+  text-align: right;
+  width: 100%;
+}
+/* mobile first */
+.col, .left, .right {
+  float: left;
+  padding: 7px;
+  width: 100%;
+}
+/* larger devices */
+@media only screen and (min-width:768px) {
+  .col, .left, .right {
+    width: 50%;
+  }
+}
+@media only screen and (min-width:1024px) {
+  .col {
+    width: 25%;
+  }
+  .left {
+    width: 40%;
+  }
+  .right {
+    width: 60%;
+  }
+}

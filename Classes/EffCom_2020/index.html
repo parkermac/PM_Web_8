@@ -1,0 +1,133 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content='width=device-width' /> -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Effective Computing</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../../CSS/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #BABABA;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+ 
+  <div class="header"><a href="http://www.washington.edu/">UW</a> | <a href="http://coenv.washington.edu/">College of the Environment</a> | <a href="http://www.ocean.washington.edu/">School of Oceanography</a> | <a href="http://www.ocean.washington.edu/story/Physical+Oceanography">Physical Oceanography</a></div>
+  
+  <div class="header2"><strong>Parker MacCready</strong> : <a href="../../index.html">Home</a> | <a href="../../cmg/cmg.html">Research</a> | <a href="../../people.html">People</a> | <a href="../../classes.html">Classes</a> | <a href="../../publications.html">Publications</a> | <a href="../../LO/LiveOcean.html">LiveOcean</a> | <a href="../../LO/tools.html">Tools</a><hr></div>
+  
+<div class="content"><!-- InstanceBeginEditable name="EditRegion4" -->
+  <h2>Effective Computing</h2>
+  <h3><em class="red">Overwhelmed by the world of computing tools you could be using for your research? Mired in messy code that won't evolve with your ideas? This course is for you. Designed for grad students across the College of the Environment, it is a broad, practical introduction to the most important computer things you need to know to keep your research flowing smoothly.</em></h3>
+  <p><strong>Based on OCN 506A Spring 2020</strong><br>
+    Instructor: Parker MacCready, <a href="http://faculty.washington.edu/pmacc">http://faculty.washington.edu/pmacc</a>, pmacc@uw.edu<br>
+    ** I am indebted to the outstanding group of students who took this class during our first term in quarantine and contributed their enthusiasm, experience, and ideas.
+    Thank you.**<br>
+  </p>
+  <p>The lectures here are mostly PDF, and some <a href="https://github.com/parkermac/pmec">associated code in GitHub</a>. I include the PPT version of each lecture for any teachers who want to edit the material for their own courses. One goal of the course is that you should be able to work across different computers, and we assume that you work locally from a Mac or Windows machine and remotely on a linux machine. To make full use of the lectures you need to get an account on a linux machine.</p>
+  <hr>
+  <ul>
+    <li>Intro: Course goals. Taking inventory of how you work now and what you want to do.  <a href="lectures/What are you doing.pdf">PDF</a>/<a href="lectures/What are you doing.pptx">PPT</a>
+      <ul>
+        <li><a href="assignments.html#a1" target="_blank">Assignment 1</a></li>
+        </ul>
+      </li>
+    <li>First step: Install linux &amp; python on your laptop (Mac version). <a href="lectures/Install linux and python.pdf">PDF</a>/<a href="lectures/Install linux and python.pptx">PPT</a></li>
+    <li>Alternate first step: Install linux &amp; python on your laptop (Windows version). <a href="data/Install linux and python for Windows.pdf">PDF</a>, <a href="data/Install linux and python for Windows.docx">docx</a>
+  <ul>
+    <li><a href="assignments.html#a2" target="_blank">Assignment 2</a></li>
+    </ul>
+      </li>
+    <li>Linux 1: Essential commands. <a href="lectures/Linux 1.pdf">PDF</a>/<a href="lectures/Linux 1.pptx">PPT</a></li>
+    <li> Linux 2: grep, wildcards, scripting. <a href="lectures/Linux 2.pdf">PDF</a>/<a href="lectures/Linux 2.pptx">PPT</a>
+      <ul>
+        <li>At this point you start using sample code I provide. This is all kept in the GitHub repo https://github.com/parkermac/pmec. In the GitHub lectures below I go over how you can clone the whole pile of code, but to keep it simple at the start I just have you download individual programs. To get the one used here click on the link below, then right-click on the &quot;Raw&quot; button at the upper right, and cloose &quot;Save Link As...&quot; to save the file to your laptop. The last slide of the PPT has guidance about where to put the file.</li>
+        <li> <a href="https://github.com/parkermac/pmec/blob/master/first_script.sh" target="_blank">first_script.sh</a>    </li>
+        <li><a href="assignments.html#a3" target="_blank">Assignment 3</a></li>
+        </ul>
+      </li>
+    <li>Linux 3: Working on remote machines. <a href="lectures/Remote Machines.pdf">PDF</a>/<a href="lectures/Remote Machines.pptx">PPT</a></li>
+    <li>Designing code projects, strategies for debugging, commenting, and performance testing. <a href="lectures/Code Project Design.pdf">PDF</a>/<a href="lectures/Code Project Design.pptx">PPT</a>
+      <ul>
+        <li><a href="assignments.html#a4" target="_blank">Assignment 4</a></li>
+        </ul>
+      </li>
+    <li> Python: basics - objects, control structures, how to write and run a program. <a href="lectures/Python basics.pdf">PDF</a>/<a href="lectures/Python basics.pptx">PPT</a></li>
+    <li>Python: Write your own modules, input and output try-except. <a href="lectures/Python basics 2.pdf">PDF</a>/<a href="lectures/Python basics 2.pptx">PPT</a>
+      <ul>
+        <li>Exercise: parse and plot a CTD file. <a href="lectures/CTD Plotting Exercise.pdf">PDF</a>/<a href="lectures/CTD Plotting Exercise.pptx">PPT</a>, <a href="data/2017-01-0118.ctd">data file</a></li>
+        </ul>
+      </li>
+    <li>GitHub 1 - your code in a repo! <a href="lectures/GitHub Intro.pdf">PDF</a>/<a href="lectures/GitHub Intro.pptx">PPT</a>
+      <ul>
+        <li>NOTE: in the course evaluations several students suggested that they wished we had done more with reading in data before the matplotlib classes. If this describes you, skip ahead to the pandas lecture and Assignment 7.</li>
+        </ul>
+      </li>
+    <li>Python : numpy and argparse. <a href="lectures/Numpy and Argparse.pdf">PDF</a>/<a href="lectures/Numpy and Argparse.pptx">PPT</a>
+      <ul>
+        <li><a href="assignments.html#a5" target="_blank">Assignment 5</a></li>
+        </ul>
+      </li>
+    <li>Python: matplotlib 1 - basics: line and field plots, multiple plots on a page, remote printing. <a href="lectures/matplotlib 1.pdf">PDF</a>/<a href="lectures/matplotlib 1.pptx">PPT</a></li>
+    <li>Python: matplotlib 2  - beautiful figures. <a href="lectures/matplotlib 2.pdf">PDF</a>/<a href="lectures/matplotlib 2.pptx">PPT</a>
+      (<a href="data/salt.p">salt.p </a>data file)
+  <ul>
+    <li><a href="assignments.html#a6" target="_blank">Assignment 6</a></li>
+    </ul>
+      </li>
+    <li>Python: pandas. Run and then read over the comments in: pmec/ex_pandas
+      <ul>
+        <li><a href="assignments.html#a7" target="_blank">Assignment 7</a></li>
+        </ul>
+      </li>
+    <li>GitHub 2 - collaboration with others. <a href="lectures/GitHub collaboration.pdf">PDF</a>/<a href="lectures/GitHub collaboration.pptx">PPT</a></li>
+    <li>Python misc topics: Run and then read over the comments for the programs in: pmec/ex_misc. This contains examples of how to use many extremely useful tools, including:
+      <ul>
+        <li>netCDF4</li>
+        <li>subprocess and scipy.io to work with MATLAB</li>
+        <li>requests to get data from the web</li>
+        <li>parsing XML</li>
+        <li>numpy masked arrays, and</li>
+        <li>xarray</li>
+        </ul>
+      </li>
+    <li><a href="assignments.html#a8" target="_blank">Assignment 8 - Final project</a></li>
+  </ul>
+  <hr>
+  <h3>Format (I include this mainly for teachers who may want to teach this class themselves - for the website version here of course there are no Zoom meetings!)</h3>
+  <p>The course will be conducted entirely online.  The two lecture periods per week will be Zoom meetings. I believe you just click on one of the links below in the Course Summary and you will be able to join. I'll be joining a few minutes early each day in case you want to talk informally.  The meetings will be recorded and will be available in the cloud through the Zoom button at the left. I would really like to hear any suggestions you have for ways to make our communication work better.</p>
+  <p>During class time I'll be going over material available ahead of time as PowerPoint presentations you can download from this Canvas site, with a lot of time for discussion and some small group exercises. There will be weekly assignments that involve you trying out something and often reporting back on whatever issues you had and how you tried to solve them. The goal is to make the course as relevant as possible to the actual problems YOU need to solve to make your own use of computers more effective. Later in the term students will work in small teams to develop their own code projects. They will also do beta-testing and code review for other teams.</p>
+  <h3>Requirements</h3>
+  <p>You need a working laptop, Mac or Windows or Linux, and a good internet connection for the Zoom meetings. Sometimes plugging into the wired ethernet from your router works better than wireless. Ideally your camera will be on, so make sure you are dressed as for class, have a quiet, private space if possible, and a non-distracting background. If you don't have the computer or internet contact me and we will see what we can do.</p>
+  <h3>Grading and Expectations</h3>
+  <p>Since this is not a required class just assume you will get a good grade, and if you go above and beyond with the assignments and/or helping others you will get a better grade. I expect you to show up and participate.</p>
+  <h3>Books</h3>
+  <p>McKinney (2018) Python for Data Analysis, 2nd Edition. O'Reilly. This is my favorite python book. It has chapters on NumPy and Matplotlib. Also, he is the guy who created Pandas, a surprisingly useful module for messy data jobs like working with time-stamped data. I strongly recommend sitting down and reading about a programming language before you write any code.  The book is available as a free pdf  <a href="https://www.programmer-books.com/wp-content/uploads/2019/04/Python-for-Data-Analysis-2nd-Edition.pdf" target="_blank">here</a>.</p>
+  <p>Hey (2014) The Computing Universe, Cambridge University Press. A broad history of the evolution of computers software.  Great reading for a beach vacation.</p>
+  <h3>Resources for colormaps</h3>
+  <p>
+    This site allows you to view your own figure with various simulated forms of color blindness: <a href="https://www.color-blindness.com/coblis-color-blindness-simulator" target="_blank">coblis</a>. I think Green-Weak Deuteranomaly is the most common form.<br>
+    </p>
+  <p>
+    This paper is a good reference on the considerations you might apply when choosing a colormap: <a href="https://tos.org/oceanography/article/true-colors-of-oceanography-guidelines-for-effective-and-accurate-colormap" target="_blank">True colors of oceanography</a>. The author, Kristen Thyng, is a UW graduate from Mechanical Engineering.</p>
+  <h3>Sharing</h3>
+  <p>Please feel free to use and modify any of the course material here. I have intentionally left everything as editable PPT and Word documents. Let me know if you have suggestions for improvement.</p>
+<!-- InstanceEndEditable --></div>
+  
+  <div class="footer"><hr>
+<em>Last edited
+  <!-- #BeginDate format:Am1 -->May 11, 2021<!-- #EndDate --></em></div>
+  
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

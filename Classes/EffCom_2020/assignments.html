@@ -1,0 +1,105 @@
+<!doctype html>
+<html><!-- InstanceBegin template="/Templates/base.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<head>
+<meta charset="UTF-8">
+<!-- <meta name="viewport" content='width=device-width' /> -->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Effective Computing Assignments</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../../CSS/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-color: #BABABA;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+ 
+  <div class="header"><a href="http://www.washington.edu/">UW</a> | <a href="http://coenv.washington.edu/">College of the Environment</a> | <a href="http://www.ocean.washington.edu/">School of Oceanography</a> | <a href="http://www.ocean.washington.edu/story/Physical+Oceanography">Physical Oceanography</a></div>
+  
+  <div class="header2"><strong>Parker MacCready</strong> : <a href="../../index.html">Home</a> | <a href="../../cmg/cmg.html">Research</a> | <a href="../../people.html">People</a> | <a href="../../classes.html">Classes</a> | <a href="../../publications.html">Publications</a> | <a href="../../LO/LiveOcean.html">LiveOcean</a> | <a href="../../LO/tools.html">Tools</a><hr></div>
+  
+<div class="content"><!-- InstanceBeginEditable name="EditRegion4" -->
+  <h2>Assignments for <a href="index.html">Effective Computing</a></h2>
+  <hr>
+  <h3 id="a1">1. Introduce yourself to  me</h3>
+  <p>This is for me to get an idea of how you currently use computers, software, and programming for your research.<br>
+    Answer the questions in the Intro PPT.</p>
+  <hr>
+  <h3 id="a2">2. Installation feedback</h3>
+  <p>Write me some notes on how your linux and python installations worked.  If there were no issues this can be very short (&quot;It worked.&quot;).  The goal is for me to find out any problems so I can help, especially with Windows issues.</p>
+  <hr>
+  <h3 id="a3">3. Linux practice and Your Workflow</h3>
+  <p>1. Read through the PPTs Linux 1 and 2 and do the exercises in blue, and any others that you want. This is to give you some practice using linux from the command line.<br>
+    2. Download the example shell script.  Read it using a text editor.  Then, following the directions from the last page of the Linux 2 PPT, make a directory for it on your machine and run it from the terminal.<br>
+    3. This is the only part you hand in: consider a sequence of computer-based tasks (a &quot;workflow&quot;) that you do as part of your research.  Write out this workflow in text form, making notes on what computer or software you use for each step and how long it takes.</p>
+  <p><br>
+    For me an example would be what I do to keep part of my model-data comparison system up to date:<br>
+    Goal: Compare LiveOcean 2019 output to Washington Dept. of Ecology CTD/Bottle data<br>
+    Steps:<br>
+    * Contact friends at Ecology and see what the current protocol is for data requests.  May have to trade in some favors. (1 day)<br>
+    * Get Excel Spreadsheet from them. (2 weeks)<br>
+    * Spend 2 days editing my python code (local mac) to ingest their data, accounting for new column names and error codes.<br>
+    * Run python cast extraction code for 2019 on LiveOcean (remote machine).  Along the way I have to use git to make sure that code is up to date on the remote machine. (10 minutes)<br>
+    * Download results of cast extraction to local mac using Transmit (could have used scp) (1 minute)<br>
+    * Run python code (local mac) that does model-data comparison.  Deal with a few new bugs, inevitably. (2 hours)<br>
+    * Result: a folder of plots (.png) showing the results, and some summary statistics.<br>
+    * Question to ask myself: could I have used a shell script to make any part of this easier?  Answer: maybe not in this case.</p>
+  <hr>
+  <h3 id="a4">4. README</h3>
+  <p>Please find a folder or collection of programs you have written or edited as part of a workflow.  If you have not already done so, create a README file to go with these programs.  The goal is to make a document that you or someone else can use to quickly orient yourself to what all the programs do.  The exact format you use is personal choice - think of what you would want to read if you were picking up an old workflow after 6 months of doing other things.  Here is an example for one of my projects <a href="data/README.txt" target="_blank">README.txt</a>. I do not expect yours to be as long as this!  It could even document just one program.</p>
+  <hr>
+  <h3 id="a5">5. numpy &amp; argparse</h3>
+  <p>For this week's assignment, please:<br>
+    1. Use the directions from the first GitHub lecture PPT to get GitHub going on your laptop, and to clone a repo of your choice (the one where you will keep your code from this class) to fjord.<br>
+    2. Referring to the code examples in my repo pmec/ex_numpy (which you have to get using git) please write a program which achieves the following minimum goals:<br>
+    * Make some arrays in numpy and try 5 methods of your choice on them<br>
+    * Have the code save some output to your output directory ([my_code]_output/) as a pickle file, and have it read that file back in.  Have the code make the output directory if needed.<br>
+    * Use argparse to add command-line arguments to your code, allowing the user to make some choice about what happens.<br>
+    * Push your code to github, and then pull it to your account on fjord (in /data1), and try running it there.<br>
+    3. Submit a copy of your code, and let me know your GitHub username.  Please detail any problems you had.  The goal, as usual, is not just to get the job done but to clearly understand what made it difficult (or impossible!).</p>
+  <hr>
+  <h3 id="a6">6. matplotlib</h3>
+  <p>1. Find a figure you have created as part of your research, and save it as a &quot;BEFORE&quot; .png.<br>
+    2. Write a python program to remake the figure and save it as an &quot;AFTER&quot; .png<br>
+    3. Look through papers written by others, select a figure you think is really great, and save a copy of it (I often do this as a &quot;selected screen shot&quot; while reading the PDF, using the shortcut SHIFT-COMMAND-4 on my mac).<br>
+    4. Upload the code and all three figures, with a note in the comment section about graphical choices you made or things you wish you could get python to do.<br>
+    -- Things to think about:<br>
+    * Make all the figure creation happen in the code, not waiting for later hand editing.<br>
+    * Are your fonts big enough to read? All of them?<br>
+    * Are all lines thick enough to see?<br>
+    * Is the figure &quot;caption-ready&quot; (panels have (a), (b), etc.)?<br>
+    * Is there too much information on the plot?<br>
+    * Are your colors doing what you want?</p>
+  <hr>
+  <h3>7. Read and manipulate data using pandas</h3>
+  <p>1. Please read Chapters 5 and 6 of the book &quot;Python for Data Analysis&quot; The book is available as a free pdf <a href="https://www.programmer-books.com/wp-content/uploads/2019/04/Python-for-Data-Analysis-2nd-Edition.pdf">here</a>. These introduce the essential pandas data structure, called a DataFrame, and show how to read common data sources like csv and Excel files into it.<br>
+    2. Try reading in one of your own text,  .csv or .xlsx files using pandas methods and see if you can (1) manipulate the data in some way like choosing subsets or filtering, and (2) plot some of it.  You can see examples of this in the code in pmec/ex_pandas, available as always using git pull.<br>
+    3. Assignment to turn in: Write a question that arises during your file reading exercise, and describe how you tried (or succeeded) in answering your question.  Be prepared to ask your question in class.</p>
+  <hr>
+  <h3 id="a8">8. Final Project</h3>
+  <p>This is the last assignment of the term, and is due the first day of finals week.  It involves working in teams of 3-4 to write a program collaboratively.  Each of the 6 teams will give a group presentation during the last week of class.<br>
+    * The challenge: create a program (plus module if needed) that<br>
+    (i) gets data from the web,<br>
+    (ii) does some processing of the data, and<br>
+    (iii) and saves one or more informative, beautiful plots.<br>
+    The program should be well commented, and it should be able to be run without editing by anyone who downloads it.  Make use of the [mydir], [mydir]_output folder structure.  The program should make use of input commands or command line arguments to allow the user to make some choices about what it does.  It should be able to run on fjord and both Windows (using Ubuntu) and mac laptops.<br>
+    * Each team should appoint a Leader who will own the GitHub repo where the code lives.  Try to use the GitHub clone-and-fork techniques we discussed in lecture to work on the code collaboratively.<br>
+    * Deliverables: the team Leader should turn in the GitHub URL where the repo is (by email to me) and the PPT of the team presentation.  Each team member should provide a half-page written discussion of how they contributed to the effort. During the last two classes of the term the teams will give presentations, three teams each day.  Each team has  a total of 20 minutes (including questions and handoff, so plan on talking for 12 minutes) and each team member should deliver a part of the presentation.<br>
+    * Teams please be prepared to tell the class what you are working on in class.  Also identify the team leader, the team name, and the URL of the repo for me to clone.</p>
+<!-- InstanceEndEditable --></div>
+  
+  <div class="footer"><hr>
+<em>Last edited
+  <!-- #BeginDate format:Am1 -->September 13, 2020<!-- #EndDate --></em></div>
+  
+</div>
+
+</body>
+<!-- InstanceEnd --></html>

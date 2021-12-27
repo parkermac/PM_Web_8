@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LiveOcean Salinity Movie</title>
+<link href="../CSS/style0.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Global site tag (gtag.js) - Google Analytics --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script> 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134450556-1');
+</script>
+<div class="container0">
+  <div class="title">
+    <h1> <a href="LiveOcean.html">LiveOcean</a> </h1>
+  </div>
+  
+  <div class="container"><div class="item"><h2>A year of  salinity in the Pacific Northwest and Salish Sea</h2></div>
+  
+    <div class="itemc">
+    <video width="100%" controls loop >
+      <source src="Figs/superplot_salt.mp4" type="video/mp4">
+    </video>
+ </div>
+  
+    <div class="item"><p>The movie above shows a full year of salinity simulated by the LiveOcean model. The red colors are the salty ocean, and the blue colors are the fresher waters influenced by our many rivers. The color scales are different in each panel to emphasize the processes in different regions. The Columbia River plume is especially apparent on the coast, flowing south and offshore during summer when winds are from the north. In the winter the plume hugs the coast and flows north, forced by winds from the south.</p>
+  <p>Within the Salish Sea and Puget Sound you can see the competition between fresh and salt water in the presence of strong tidal mixing. This gives rise to the &quot;<a href="exchange_flow.html">estuarine exchange flow</a>,&quot; in which deep ocean water is continually pulled into the large Salish Sea estuarine system. This inflowing water then mixes with a bit of fresh water from the rivers, and finally flows back out to sea. The exchange flow is 20 times bigger than the sum of all our rivers, and is the source of 95% of the nutrients that feed <a href="phytoplankton_year.html">phytoplankton</a> growth in the Salish Sea. In the Puget Sound cross-section you can see that the deep waters of Main Basin grow saltier during the summer months when river flow is lowest. You can also see exchange flow &quot;events&quot; happen as a surge of salty water cascades from Admiralty Inlet down into Main Basin. This happens during especially weak neap <a href="tides_background.html">tides</a> (&quot;apogean neaps&quot; when the moon is farthest away on its elliptical orbit) when the weaker tidal mixing allows the saltiest water to pour into deep Main Basin.</p></div></div>
+    
+  <hr class="container">
+    
+  <div class="container">
+    <div class="footer">
+      <p>Last edited <span id="edit_date"></span></p>
+      <script>
+          document.getElementById("edit_date").innerHTML = document.lastModified;
+        </script> 
+    </div>
+  </div>
+</div>
+</body>
+</html>
