@@ -20,7 +20,7 @@ body {
 .container0 {
   max-width: 1200px;
   margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
-  background-color: azure;
+  background-color: #f1f1f1;
 }
 .title {
   float: left;
