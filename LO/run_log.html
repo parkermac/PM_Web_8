@@ -74,15 +74,17 @@ body {
   <p>These are are an 8-year sequence of quasi-continuous runs (first PM ran each year on its own to get a good IC for the next year, then he re-ran the last 7 years).  They are physics-only, no dye or NPZDO.  Hourly files, about 714 GB per year. </p>
 <hr />
   <h3><span class="mw-headline">LiveOcean Runs</span> (results stored in day folders like f2020.01.26)</h3>
+  <p>perigee: /data1/parker/LO_roms/</p>
+  <ul>
+    <li>cas6_v0_live This is the most complete archive of the current LiveOcean forecast, 2016.12.15 to the day after tomorrow. It was originally the files in cas6_v3_lo8b, and then we started appending files from cas6_v0_u0kb (or occasionally _u0mb) after the transition from the LiveOcean code to the LO code. [35 TB, compressed NetCDF]</li>
+    <li>cas6_v3t075_lo8 A single year, 2018, run with 75% tides, non biology. [3.7 TB]</li>
+    <li>cas6_v3t110_lo8 A single year, 2018, run with 110% tides, non biology. [3.7 TB]</li>
+  </ul>
   <p>boiler: /data1/parker/LiveOcean_roms/output</p>
   <ul>
-    <li>cas6_v3_lo8b This is the current  version, 500 m grid in the Salish Sea, 45 rivers, full NPZDO+Carbon. [15 TB per year] 2021.01.01-present</li>
+    <li>cas6_v3_lo8b This is the current  version, 500 m grid in the Salish Sea, 45 rivers, full NPZDO+Carbon. [15 TB per year] 2021.01.01-late 2021. This was copied to cas6_v0_live on perigee, described above, and is no longer active. REDUNDANT</li>
     <li>sj0_v0_lo8nest This is a model of the San Juan Islands, physics only, 100 m resolution, one-way nested inside of cas6_v3_lo8b. It was created for the FHL 2019 Summer School. [1.2 TB] 2019.07.22-2019.12.25 </li>
-    <li>cas6_v3_lo8dye Has dye in Hood Canal [2.4 TB] 2019.07.03-2019.10.04</li>
-  </ul>
-  <p>perigee: /data1/parker/LiveOcean_roms/output </p>
-  <ul>
-    <li>cas6_v3_lo8b [68 TB] 2016.12.15-2020.12.31</li>
+    <li>cas6_v3_lo8dye Has dye in Hood Canal [2.4 TB] 2019.07.03-2019.10.04  </li>
   </ul>
   <p>perigee: /data2/parker/LiveOcean_roms/output</p>
   <ul>
@@ -98,7 +100,7 @@ body {
   
   <div class="footer"><hr>
 <em>Last edited
-  <!-- #BeginDate format:Am1 -->February 6, 2022<!-- #EndDate --></em></div>
+  <!-- #BeginDate format:Am1 -->July 1, 2022<!-- #EndDate --></em></div>
   
 </div>
 
