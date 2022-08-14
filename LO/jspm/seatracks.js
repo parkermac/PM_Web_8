@@ -1,36 +1,21 @@
 //JAVASCRIPT VIS CODE STARTS HERE
 // define async function to load the data files. all other code is in the function create_vis() which is executed at the bottom of the script to run once the data have loaded
 async function loadFiles() {
-  let tracks_PS = await d3.json("tracks/tracks_PS.json");
-  let coast_xy = await d3.json("tracks/coast_xy.json");
-  let tracks_full = await d3.json("tracks/tracks_full.json");
-  return [tracks_PS, coast_xy, tracks_full];
-    
-    // ORIGINAL
-//                       async function loadFiles() {
-//                        let tracks_PS_restructured = await d3.json("./tracks_PS_restructured.json");
-//                        let tracks_PS = await d3.json("./tracks_PS.json");
-//                        let coast_xy = await d3.json("./coast_xy.json");
-//                        let tracks_full_restructured = await d3.json("./tracks_full_restructured.json");
-//                        let tracks_full = await d3.json("./tracks_full.json");
-//                        return [tracks_PS_restructured, tracks_PS, coast_xy, tracks_full_restructured, tracks_full];
- 
+  let tracks_PS_restructured = await d3.json("./tracks/tracks_PS_restructured.json");
+  let tracks_PS = await d3.json("./tracks/tracks_PS.json");
+  let coast_xy = await d3.json("./tracks/coast_xy.json");
+  let tracks_full_restructured = await d3.json("./tracks/tracks_full_restructured.json");
+  let tracks_full = await d3.json("./tracks/tracks_full.json");
+  return [tracks_PS_restructured, tracks_PS, coast_xy, tracks_full_restructured, tracks_full];
 };
 //code to make the vis:
 function create_vis(data) {
-    //ORIGINAL
   //name the variables loaded by loadFiles():
-//  const PS_data = data[0];
-//  const tracks_PS = data[1];
-//  const coast_file = data[2];
-//  const full_data = data[3];
-//  const tracks_full = data[4];
-    
   const PS_data = data[0];
-  const tracks_PS = data[0];
-  const coast_file = data[1];
-  const full_data = data[2];
-  const tracks_full = data[2];
+  const tracks_PS = data[1];
+  const coast_file = data[2];
+  const full_data = data[3];
+  const tracks_full = data[4];
 
   var xmin = -125;
   var xmax = -121.75;
@@ -200,11 +185,13 @@ function create_vis(data) {
   coast_line_lines = d3.range(1, 4251);
 
   // d3 scales for drifter map:
-  xScaleScatter = d3.scaleLinear().clamp(true)
+    // PM Edit: Original version had clamp(true) but then the drifters
+    // piled up on the westtern boundary.
+  xScaleScatter = d3.scaleLinear().clamp(false)
     .domain([xmin, xmax])
     // .domain(d3.extent(PS_data, d => d.x))
     .range([margin.left, chartWidth - margin.right]);
-  yScaleScatter = d3.scaleLinear().clamp(true)
+  yScaleScatter = d3.scaleLinear().clamp(false)
     .domain([ymin, ymax])
     // .domain(d3.extent(PS_data, d => d.y))
     .range([height - margin.bottom - 100, 150]);
