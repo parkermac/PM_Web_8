@@ -16,17 +16,6 @@ body {
 }
 </style>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450556-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-134450556-1');
-</script>
-
-
 </head>
 
 <body>
@@ -58,7 +47,7 @@ body {
   
   <div class="footer"><hr>
 <em>Last edited
-  <!-- #BeginDate format:Am1 -->February 6, 2022<!-- #EndDate --></em></div>
+  <!-- #BeginDate format:Am1 -->August 27, 2024<!-- #EndDate --></em></div>
   
 </div>
 
