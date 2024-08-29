@@ -50,14 +50,16 @@ function create_vis(data) {
     .attr("width", width)
     .attr("height", height);
 
-    // // make the container visible
-    // svg.append("g")
-    //     .append("rect")
-    //     .attr("width", width)
-    //     .attr("height", height)
-    //     .attr("fill", "green")
-    //     .attr("opacity", 0.1)
-    //     .attr("id", "my_thing");
+    // make the container visible
+    svg.append("g")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "none")
+        .attr("stroke", "red")
+        .attr("stroke-width", 10)
+        .attr("opacity", .3)
+        .attr("id", "my_thing");
 
     // // make the model extent visible
     // svg.append("g")
