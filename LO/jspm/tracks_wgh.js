@@ -28,7 +28,7 @@ function create_vis(data) {
 
     // Define the size of the svg.
     let m = .5,
-        w0 = 400,
+        w0 = 350,
         h0 = w0 * hfac;
 
     let margin = { top: m, right: m, bottom: m, left: m },
