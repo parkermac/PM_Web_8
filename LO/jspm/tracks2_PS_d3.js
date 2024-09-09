@@ -61,15 +61,15 @@ function create_vis(data) {
         .attr("opacity", .3)
         .attr("id", "my_thing");
 
-    // Add the x-axis.
-    svg.append("g") // NOTE: the svg "g" element groups things together.
-        .attr("transform", `translate(0,${height - margin.bottom})`)
-        .call(d3.axisTop(x).ticks(3));
+    // // Add the x-axis.
+    // svg.append("g") // NOTE: the svg "g" element groups things together.
+    //     .attr("transform", `translate(0,${height - margin.bottom})`)
+    //     .call(d3.axisTop(x).ticks(3));
 
-    // Add the y-axis.
-    svg.append("g")
-        .attr("transform", `translate(${margin.left},0)`)
-        .call(d3.axisRight(y).ticks(5));
+    // // Add the y-axis.
+    // svg.append("g")
+    //     .attr("transform", `translate(${margin.left},0)`)
+    //     .call(d3.axisRight(y).ticks(5));
 
     // Name the data loaded by loadFiles():
     const tracks = data[0];
@@ -152,14 +152,14 @@ function create_vis(data) {
         sxyT.push(xy);
     }
 
-    // Loop over all tracks and plot them, one line per track.
-    for (let j = 0; j < nTracks; j++) {
-        svg.append("path")
-            .attr("d", d3.line()(sxyAll[j]))
-            .attr("stroke", "green")
-            .attr("fill", "none")
-            .attr("opacity", 0.5);
-    }
+    // // Loop over all tracks and plot them, one line per track.
+    // for (let j = 0; j < nTracks; j++) {
+    //     svg.append("path")
+    //         .attr("d", d3.line()(sxyAll[j]))
+    //         .attr("stroke", "green")
+    //         .attr("fill", "none")
+    //         .attr("opacity", 0.5);
+    // }
 
     // Loop over all the coast segments and plot them, one line per segment.
     for (let j = 0; j < nCoast; j++) {
