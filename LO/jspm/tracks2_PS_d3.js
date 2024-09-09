@@ -47,19 +47,9 @@ function create_vis(data) {
 
     // Create the SVG container.
     const svg = d3.create("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-    // make the container visible
-    svg.append("g")
-        .append("rect")
         .attr("width", width)
-        .attr("height", height)
-        .attr("fill", "none")
-        .attr("stroke", "moccasin")
-        .attr("stroke-width", 10)
-        .attr("opacity", 1)
-        .attr("id", "my_thing");
+        .attr("height", height);
+
 
     // // Add the x-axis.
     // svg.append("g") // NOTE: the svg "g" element groups things together.
@@ -110,7 +100,7 @@ function create_vis(data) {
     // where each item in the list is one segment, packed as a list of [x,y] points.
     let cxy = [];
     for (let s = 0; s < nCoast; s++) {
-            // pull out a single segment and scale
+        // pull out a single segment and scale
         var cx = coastVal[s].x;
         var cy = coastVal[s].y;
         var csxy = [];
@@ -169,7 +159,19 @@ function create_vis(data) {
             .attr("fill", "none")
             .attr("opacity", 1.0);
     }
-    
+
+    // make the container visible
+    svg.append("g")
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "none")
+        .attr("stroke", "skyblue")
+        .attr("stroke-width", 10)
+        .attr("opacity", 1)
+        .attr("id", "my_thing");
+
+
     // Append the SVG element.
     map_container.append(svg.node());
 
@@ -219,7 +221,7 @@ function create_vis(data) {
         // console.log(e.target)
         // console.log(e.sourceEvent)
         // console.log(e.mode)
-        if (brushExtent!=null) {
+        if (brushExtent != null) {
             update_isin();
             update_points();
         }
@@ -243,10 +245,10 @@ function create_vis(data) {
             var bx1 = brushExtent[1][0];
             var by0 = brushExtent[0][1];
             var by1 = brushExtent[1][1];
-            var bxc = (bx1+bx0)/2;
-            var byc = (by0+by1)/2;
-            var br = (bx1-bx0 + by1-by0)/4;
-            var pr = Math.sqrt((xp-bxc)**2 + (yp-byc)**2)
+            var bxc = (bx1 + bx0) / 2;
+            var byc = (by0 + by1) / 2;
+            var br = (bx1 - bx0 + by1 - by0) / 4;
+            var pr = Math.sqrt((xp - bxc) ** 2 + (yp - byc) ** 2)
             if (pr < br) {
                 isin.push(1.0);
             } else {
