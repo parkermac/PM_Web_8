@@ -56,7 +56,7 @@ function create_vis(data) {
         .attr("width", width)
         .attr("height", height)
         .attr("fill", "none")
-        .attr("stroke", "cyan")
+        .attr("stroke", "moccasin")
         .attr("stroke-width", 10)
         .attr("opacity", 1)
         .attr("id", "my_thing");
