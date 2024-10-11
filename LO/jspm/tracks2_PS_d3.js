@@ -239,32 +239,32 @@ function create_vis(data) {
         for (let j = 0; j < nTracks; j++) {
             // plot the point
             // treating the brush rectangle as a circle
-            var xp = sxyNow[j][0];
-            var yp = sxyNow[j][1];
-            var bx0 = brushExtent[0][0];
-            var bx1 = brushExtent[1][0];
-            var by0 = brushExtent[0][1];
-            var by1 = brushExtent[1][1];
-            var bxc = (bx1 + bx0) / 2;
-            var byc = (by0 + by1) / 2;
-            var br = (bx1 - bx0 + by1 - by0) / 4;
-            var pr = Math.sqrt((xp - bxc) ** 2 + (yp - byc) ** 2)
-            if (pr < br) {
-                isin.push(1.0);
-            } else {
-                isin.push(2.0);
-            }
-            // Using the brush rectangle
-            // if (sxyNow[j][0] >= brushExtent[0][0] &&
-            //     sxyNow[j][0] <= brushExtent[1][0] &&
-            //     sxyNow[j][1] >= brushExtent[0][1] &&
-            //     sxyNow[j][1] <= brushExtent[1][1]) {
+            // var xp = sxyNow[j][0];
+            // var yp = sxyNow[j][1];
+            // var bx0 = brushExtent[0][0];
+            // var bx1 = brushExtent[1][0];
+            // var by0 = brushExtent[0][1];
+            // var by1 = brushExtent[1][1];
+            // var bxc = (bx1 + bx0) / 2;
+            // var byc = (by0 + by1) / 2;
+            // var br = (bx1 - bx0 + by1 - by0) / 4;
+            // var pr = Math.sqrt((xp - bxc) ** 2 + (yp - byc) ** 2)
+            // if (pr < br) {
             //     isin.push(1.0);
             // } else {
             //     isin.push(2.0);
-            //     // I tried to push 0 for this but it threw a TypeError
-            //     // perhaps interpreting 0 as "null".
             // }
+            // Using the brush rectangle
+            if (sxyNow[j][0] >= brushExtent[0][0] &&
+                sxyNow[j][0] <= brushExtent[1][0] &&
+                sxyNow[j][1] >= brushExtent[0][1] &&
+                sxyNow[j][1] <= brushExtent[1][1]) {
+                isin.push(1.0);
+            } else {
+                isin.push(2.0);
+                // I tried to push 0 for this but it threw a TypeError
+                // perhaps interpreting 0 as "null".
+            }
         }
     }
 
@@ -273,19 +273,19 @@ function create_vis(data) {
         svg.selectAll("circle").remove();
         for (let j = 0; j < nTracks; j++) {
             // plot the point
-            if (isin[j] == 1.0) {
-                svg.append("circle")
-                    .attr("cx", sxyNow[j][0])
-                    .attr("cy", sxyNow[j][1])
-                    .attr("r", 3)
-                    .style("fill", "red");
-            } else {
+            if (isin[j] == 2.0) {
                 svg.append("circle")
                     .attr("cx", sxyNow[j][0])
                     .attr("cy", sxyNow[j][1])
                     .attr("r", 3)
                     .attr("opacity", 0.2)
                     .style("fill", "blue");
+            } else if (isin[j] == 1.0) {
+                svg.append("circle")
+                    .attr("cx", sxyNow[j][0])
+                    .attr("cy", sxyNow[j][1])
+                    .attr("r", 3)
+                    .style("fill", "red");
             }
         }
     }
