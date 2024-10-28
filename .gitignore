@@ -2,4 +2,5 @@
 LO/Figs_active_forecast/*.mp4
 LO/tracks2/*.json
 !LO/tracks2/coast_xy.json
+!LO/obs/*.json
 
