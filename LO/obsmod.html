@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Observation Viewer</title>
+    <title>Obsmod Viewer</title>
     <link href="css/style1.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://d3js.org/d3.v7.js"></script> -->
@@ -14,7 +14,7 @@
     <div class="container0">
 
         <div class="title">
-            <h1>Observations Viewer</h1>
+            <h1>Obs-Mod Viewer</h1>
         </div>
 
         <div class="left" id="div1">
@@ -31,13 +31,13 @@
         </div>
 
         <script src="jspm/obs_functions.js"></script>
-        <script src="jspm/obs.js"></script>
+        <script src="jspm/obsmod.js"></script>
 
         <hr class="container">
 
         <div class="container">
-            <h3>This interactive tool plots observational bottle data throughout the Pacific Northwest coastal waters
-                and the Salish Sea.</h3>
+            <h3>This tool allows interactive exploration of the comparison of observed bottle data to model output
+                throughout the Pacific Northwest coastal waters and the Salish Sea.</h3>
             <h2>Directions:</h2>
             <ul>
                 <li>Drag a rectange on the map to select a region. Those cast locations will turn BLUE.</li>
@@ -46,13 +46,13 @@
                     turn RED.</li>
                 <li>Use the dropdown menu below the time slider to select the year.</li>
             </ul>
-            <p>This data comes from a veriety of agencies: WA Department of Ecology, UW Washington Ocean Acidification
-                Center cruises, NOAA West Coast Ocean Acidification cruise, Fisheries and Oceans Canada, etc. The
-                complete reference for data sources is <a
-                    href="https://github.com/parkermac/LO/blob/main/obs/README.md">here </a>.</p>
-            <p>The observations are plotted vs. depth (m) on the right. The properties are: CT = Potential Temperature
-                (deg C), SA = Salinity (g/kg), Dissolved Oxygen, Nitrate, Dissolved Inorganic Carbon, and Total
-                Alkalinity.</p>
+            <p>This data comes from a veriety of agencies: WA Department of Ecology, UW Washington
+                Ocean Acidification Center cruises, NOAA West Coast Ocean Acidification cruise, Fisheries and Oceans
+                Canada, etc. The complete reference for data sources is <a
+                    href="https://github.com/parkermac/LO/blob/main/obs/README.md">here </a>. The LiveOcean model run
+                used here is cas7_t0_x4b.</p>
+            <p>The properties are: CT = Potential Temperature (deg C), SA = Salinity (g/kg), Dissolved Oxygen, Nitrate,
+                Dissolved Inorganic Carbon, and Total Alkalinity.</p>
 
         </div>
         <hr class="container">

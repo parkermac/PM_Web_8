@@ -8,23 +8,23 @@ async function loadFiles(year) {
     let coast = await d3.json("tracks2/coast_xy.json");
     let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_info.json")
     let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_obs.json")
-    // let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
-    return [coast, obs_info, obs_data];//, mod_data];
+    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
+    return [coast, obs_info, obs_data, mod_data];
 };
 
 async function loadFiles_only_data(year) {
     year = year;
     let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_info.json")
     let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_obs.json")
-    //let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
-    return [obs_info, obs_data];//, mod_data];
+    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
+    return [obs_info, obs_data, mod_data];
 };
 
 // These values control what type of plot we are making and whether values are plotted
 // as lines or circles. This is the main thing you would change to go between and
 // observations viewer vs. and obsmod viewer.
-let plotType = 'obsz';
-let linesOrCircles = 'lines';
+let plotType = 'modobs';
+let linesOrCircles = 'circles';
 
 let brushExtent = [[200, 250], [200, 250]];
 let slider = document.getElementById("myRange");
@@ -112,7 +112,7 @@ function create_vis(data) {
         plot_fld_list.forEach(function (fld) {
             update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
             update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
-            // add_unity_line(fld, fld_svg[fld]);
+            add_unity_line(fld, fld_svg[fld]);
         });
         output.innerHTML = sliderMonths[slider.value - 1] + " " + year;
     }
@@ -134,7 +134,7 @@ function create_vis(data) {
             plot_fld_list.forEach(function (fld) {
                 update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
                 update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
-                // add_unity_line(fld, fld_svg[fld]);
+                add_unity_line(fld, fld_svg[fld]);
             });
         }
     }
@@ -157,7 +157,7 @@ function create_vis(data) {
     update_point_colors1(svgMap);
     plot_fld_list.forEach(function (fld) {
         update_cast_colors1(fld, fld_svg[fld], linesOrCircles);
-        // add_unity_line(fld, fld_svg[fld]);
+        add_unity_line(fld, fld_svg[fld]);
     });
 
     // Create a dropdown menu
@@ -185,7 +185,7 @@ function create_vis(data) {
 function update_vis(data) {
     const obs_info = data[0];
     const obs_data = data[1];
-    const mod_data = [];//data[2];
+    const mod_data = data[2];
     // Process the data for this year and add it to the plots
     make_info(obs_info, map_info);
     process_data(obs_data, mod_data, plotType);
@@ -196,7 +196,7 @@ function update_vis(data) {
         update_cast_colors1(fld, fld_svg[fld], linesOrCircles);
         update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
         update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
-        // add_unity_line(fld, fld_svg[fld]);
+        add_unity_line(fld, fld_svg[fld]);
     });
 }
 
