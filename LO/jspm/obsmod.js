@@ -32,7 +32,6 @@ let svgMap;
 let plot_fld_list = ['CT', 'SA', 'DO (uM)', 'NO3 (uM)', 'DIC (uM)', 'TA (uM)'];
 let fld_svg = {};
 
-
 // Code to make the plot and interact with it.
 function create_vis(data) {
 
@@ -49,17 +48,16 @@ function create_vis(data) {
 
     // Create the map svg and add the coastline.
     make_map_info();
-    svgMap = make_svg(map_info, 'Cast Locations');
+    svgMap = make_svg(map_info);
     add_coastline(coast, svgMap, map_info);
 
     // Create the data svg's
 
     make_data_info_all()
 
-
-    // Create the svg for the data
+    // Create the svg's for the data
     plot_fld_list.forEach(function (fld) {
-        fld_svg[fld] = make_svg(data_info_all[fld], fld);
+        fld_svg[fld] = make_svg(data_info_all[fld]);
     });
 
     // Append the SVG element to an element in the html.
@@ -113,6 +111,7 @@ function create_vis(data) {
             update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
             update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
             add_unity_line(fld, fld_svg[fld]);
+            overlay_labels(data_info_all[fld], fld_svg[fld], fld_long_names[fld], plotType)
         });
         output.innerHTML = sliderMonths[slider.value - 1] + " " + year;
     }
@@ -135,6 +134,7 @@ function create_vis(data) {
                 update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
                 update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
                 add_unity_line(fld, fld_svg[fld]);
+                overlay_labels(data_info_all[fld], fld_svg[fld], fld_long_names[fld], plotType)
             });
         }
     }
@@ -158,6 +158,7 @@ function create_vis(data) {
     plot_fld_list.forEach(function (fld) {
         update_cast_colors1(fld, fld_svg[fld], linesOrCircles);
         add_unity_line(fld, fld_svg[fld]);
+        overlay_labels(data_info_all[fld], fld_svg[fld], fld_long_names[fld], plotType)
     });
 
     // Create a dropdown menu
@@ -179,7 +180,6 @@ function create_vis(data) {
         output.innerHTML = sliderMonths[slider.value - 1] + " " + year;
         loadFiles_only_data(year).then(update_vis);
     }
-
 }
 
 function update_vis(data) {
@@ -197,6 +197,7 @@ function update_vis(data) {
         update_cast_colors2(fld, fld_svg[fld], linesOrCircles);
         update_cast_colors3(fld, fld_svg[fld], linesOrCircles);
         add_unity_line(fld, fld_svg[fld]);
+        overlay_labels(data_info_all[fld], fld_svg[fld], fld_long_names[fld], plotType)
     });
 }
 
