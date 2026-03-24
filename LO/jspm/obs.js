@@ -6,17 +6,17 @@
 async function loadFiles(year) {
     year = year;
     let coast = await d3.json("tracks2/coast_xy.json");
-    let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_info.json")
-    let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_obs.json")
-    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
+    let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_info.json")
+    let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_obs.json")
+    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_mod.json")
     return [coast, obs_info, obs_data, mod_data];
 };
 
 async function loadFiles_only_data(year) {
     year = year;
-    let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_info.json")
-    let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_obs.json")
-    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t0_x4b_mod.json")
+    let obs_info = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_info.json")
+    let obs_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_obs.json")
+    let mod_data = await d3.json("obs/combined_bottle_" + year + "_cas7_t1_x11ab_mod.json")
     return [obs_info, obs_data, mod_data];
 };
 
@@ -167,7 +167,7 @@ function create_vis(data) {
 
     // Add options to the dropdown
     dropdown.selectAll("option")
-        .data([2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023])
+        .data([2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025])
         .enter()
         .append("option")
         .text(d => d)
