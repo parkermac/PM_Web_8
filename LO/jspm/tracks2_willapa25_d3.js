@@ -5,8 +5,8 @@
 // at the bottom of the script to run once the data have loaded.
 async function loadFiles() {
     let coast = await d3.json("tracks2/coast_xy.json");
-    let tracks = await d3.json("tracks2/willapa25_tracks.json");
-    let times = await d3.json("tracks2/willapa25_times.json");
+    let tracks = await d3.json("https://s3.kopah.uw.edu/liveocean-web/willapa25_tracks.json");
+    let times = await d3.json("https://s3.kopah.uw.edu/liveocean-web/willapa25_times.json");
     //return [parseFloat(tracks_full)];
     return [tracks, times, coast];
 };
